@@ -10,10 +10,10 @@ namespace KWSNKnaBench
     {
         public static string Encrypt(string text, string secret)
         {
-            //if (string.IsNullOrEmpty(text))
-            //    throw new ArgumentNullException("text");
-            //if (string.IsNullOrEmpty(secret))
-            //    throw new ArgumentNullException("secret");
+            if (string.IsNullOrEmpty(text))
+                throw new ArgumentNullException("text");
+            if (string.IsNullOrEmpty(secret))
+                throw new ArgumentNullException("secret");
 
             var salt = Encoding.UTF8.GetBytes(secret);
 
@@ -41,10 +41,10 @@ namespace KWSNKnaBench
 
         public static string Decrypt(string cipher, string secret)
         {
-            //if (string.IsNullOrEmpty(cipher))
-            //    throw new ArgumentNullException("cipher");
-            //if (string.IsNullOrEmpty(secret))
-            //    throw new ArgumentNullException("secret");
+            if (string.IsNullOrEmpty(cipher))
+                throw new ArgumentNullException("cipher");
+            if (string.IsNullOrEmpty(secret))
+                throw new ArgumentNullException("secret");
 
             var salt = Encoding.UTF8.GetBytes(secret);
 

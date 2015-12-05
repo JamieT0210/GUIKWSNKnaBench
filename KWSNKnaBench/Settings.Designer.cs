@@ -41,9 +41,9 @@
             this.txtEmailUser = new System.Windows.Forms.TextBox();
             this.lblEmailPassword = new System.Windows.Forms.Label();
             this.txtEmailPass = new System.Windows.Forms.TextBox();
-            this.btnRefresh = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.chkBoxShowPwd = new System.Windows.Forms.CheckBox();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtBenchLoc
@@ -66,7 +66,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(699, 209);
+            this.btnSave.Location = new System.Drawing.Point(696, 209);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(148, 46);
             this.btnSave.TabIndex = 6;
@@ -159,19 +159,9 @@
             this.txtEmailPass.TabIndex = 5;
             this.txtEmailPass.UseSystemPasswordChar = true;
             // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Location = new System.Drawing.Point(309, 209);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(148, 46);
-            this.btnRefresh.TabIndex = 12;
-            this.btnRefresh.Text = "Refresh Settings";
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.Click += new System.EventHandler(this.button1_Click);
-            // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(497, 209);
+            this.btnClear.Location = new System.Drawing.Point(542, 209);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(148, 46);
             this.btnClear.TabIndex = 13;
@@ -190,15 +180,25 @@
             this.chkBoxShowPwd.UseVisualStyleBackColor = true;
             this.chkBoxShowPwd.CheckedChanged += new System.EventHandler(this.chkBoxShowPwd_CheckedChanged);
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(388, 209);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(148, 46);
+            this.btnRefresh.TabIndex = 16;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1233, 281);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.chkBoxShowPwd);
             this.Controls.Add(this.btnClear);
-            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.lblEmailPassword);
             this.Controls.Add(this.txtEmailPass);
             this.Controls.Add(this.lblEmailUser);
@@ -233,8 +233,8 @@
         private System.Windows.Forms.TextBox txtEmailUser;
         private System.Windows.Forms.Label lblEmailPassword;
         private System.Windows.Forms.TextBox txtEmailPass;
-        private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.CheckBox chkBoxShowPwd;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }

@@ -1,29 +1,30 @@
 ﻿/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Author:      Jamie                                                                                                                                              //
 // Date:        02/12/2015                                                                                                                                         //
-// Description: Main screen of the app - allows user to open other screens\run the benchmark and email out the benchmark file                                      //            
+// Description: Main screen of the app - allows user to open other screens\run the benchmark and email out the benchmark file                                      //
+//            : Amended to get settings from registry rather than file 05/12/15                                                                                    //                  
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
 using System;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
-using System.Xml;
 using System.Diagnostics;
 using System.Threading;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Net.Mail;
+using Microsoft.Win32;
 
 namespace KWSNKnaBench
 {
     public partial class Main : Form
     {
         //Declare some vars
-        private string benchLoc = null;     //Location of the KnaBench folder
-        private string emailServer = null;  //SMTP E-mail address (i.e. smtp.live.com = Hotmail)
-        private string emailPort = null;    //Port the above server uses
-        private string emailUser = null;    //E-mail address of user
-        private string emailPass = null;    //Users e-mail password
+        private string benchLoc = null; //Location of the KnaBench folder
+        private string emailServer = null; //SMTP E-mail address (i.e. smtp.live.com = Hotmail)
+        private string emailPort = null; //Port the above server uses
+        private string emailUser = null; //E-mail address of user
+        private string emailPass = null; //Users e-mail password
 
         public Main()
         {
@@ -63,17 +64,19 @@ namespace KWSNKnaBench
         //Launch the benchmark 
         private void btnRunBench_Click(object sender, EventArgs e)
         {
-            //Get the location of the bench folder from the xml settings file
-            if (File.Exists(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\KWSNKnaBench_Settings\Settings.xml")))
-            {
-                XmlDocument doc = new XmlDocument();
-                doc.Load(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\KWSNKnaBench_Settings\Settings.xml");
-                XmlNode node = doc.DocumentElement.SelectSingleNode("/Settings/Settings");
-                benchLoc = node.Attributes["Location"].InnerText;
-            }
-            else
-            {
-                MessageBox.Show("Cannot find Settings file. Ensure you have entered your settings", "Settings", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            RegistryKey key = Registry.CurrentUser.OpenSubKey("Software", true);
+            key = key.OpenSubKey("Jamie", true);
+            key = key.OpenSubKey("KWSNKnaBench", true);
+            if (key != null) 
+                {
+                Object o = key.GetValue("Path");
+                if (o != null)
+                {
+                    string InstallLoc = (o.ToString());
+                    InstallLoc = InstallLoc.TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar);
+                    benchLoc = InstallLoc;
+
+                }
             }
             if ((string.IsNullOrEmpty(benchLoc)))
             //if nothing has been passed to the var then show error
@@ -82,12 +85,11 @@ namespace KWSNKnaBench
             }
             //If MBBench214cmd can't be found in the supplier location then display an error
             if (!File.Exists(benchLoc + @"\Knabench\MBbench214.cmd"))
-                {
+            {
                 MessageBox.Show("MBBench214.cmd can not be found - check settings", "Select Benchmark Folder", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             //Otherwise try to run the bench
-            else
-            {
+            else {
                 try
                 {
                     //Check to see if an Archive folder exists in Testdatas folder if not create it
@@ -154,8 +156,7 @@ namespace KWSNKnaBench
             {
                 this.txtOutput.AppendText("Success." + Environment.NewLine);
             }
-            else
-            {
+            else {
                 this.txtOutput.AppendText("Failed." + Environment.NewLine);
             }
 
@@ -180,59 +181,58 @@ namespace KWSNKnaBench
                     text
                 });
             }
-            else
-            {
+            else {
                 this.txtOutput.AppendText(text);
             }
         }
+
+
+
+
         //Sends an e-mail with the benchmark file if required
         private void btnEmail_Click(object sender, EventArgs e)
         {
-            //Check the settings file exists and if so load the details
-            if (File.Exists(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\KWSNKnaBench_Settings\Settings.xml")))
-            {
-                XmlDocument doc = new XmlDocument();
-                doc.Load(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\KWSNKnaBench_Settings\Settings.xml");
-                XmlNode node = doc.DocumentElement.SelectSingleNode("/Settings/Settings");
-                emailServer = node.Attributes["EmailServer"].InnerText;
-                emailPort = node.Attributes["EmailPort"].InnerText;
-                emailUser = node.Attributes["EmailUser"].InnerText;
-                emailPass = Crypto.Decrypt(node.Attributes["EmailPassword"].InnerText, "A7A338B93D5E3EE1C58789EE68FAB");
-                benchLoc = node.Attributes["Location"].InnerText;
-            }
-            else
-            //Otherwise show an error
-            {
-                MessageBox.Show("E-mail details are missing - please check your settings", "No E-mail Details", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            //if settings file is missing some e-mail details show a message and stop
-            if ((string.IsNullOrEmpty(emailServer)) || (string.IsNullOrEmpty(emailServer)) || (string.IsNullOrEmpty(emailUser)) || (string.IsNullOrEmpty(emailPass)))
-            {
-                MessageBox.Show("E-mail details are missing - please check your settings", "No E-mail Details", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-                try
+            MailMessage mail = new MailMessage();
+            RegistryKey key = Registry.CurrentUser.OpenSubKey("Software", true);
+            key = key.OpenSubKey("Jamie", true);
+            key = key.OpenSubKey("KWSNKnaBench", true);
+            if (key != null) try
                 {
-                    //Try to attach the document and send the e-mail atrtaching the file
-                    XmlDocument doc = new XmlDocument();
-                    doc.Load(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\KWSNKnaBench_Settings\Settings.xml");
-                    XmlNode node = doc.DocumentElement.SelectSingleNode("/Settings/Settings");
-                    string folder = node.Attributes["Location"].InnerText + @"\Knabench\Testdatas";
+                    Object o = key.GetValue("Path");
+                    string InstallLoc = (o.ToString());
+                    InstallLoc = InstallLoc.TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar);
+                    string folder = InstallLoc + @"\Knabench\Testdatas";
                     string[] benchFiles = Directory.GetFiles(folder, "*.txt");
-                    int ConvertEmailPort = 0;
-                    Int32.TryParse(emailPort, out ConvertEmailPort);
-                    MailMessage mail = new MailMessage();
-                    SmtpClient SmtpServer = new SmtpClient(emailServer);
-                    mail.From = new MailAddress(emailUser);
-                    mail.To.Add("jtiller@hotmail.co.uk");
-                    mail.Subject = "New Benchmark File";
-                    mail.Body = "New Benchmark File";
                     //Loop through each file and attach all text files to the email - ToDo limit this to the benchmark file only rather than all .txt files
                     foreach (var txtfile in benchFiles)
                     {
                         mail.Attachments.Add(new System.Net.Mail.Attachment(txtfile));
                     }
+                    Object p = key.GetValue("SMTPServer");
+                    string SMTPServer = (p.ToString());
+                    emailServer = SMTPServer;
+                    Object q = key.GetValue("SMTPPort");
+                    string SMTPPort = (q.ToString());
+                    emailPort = SMTPPort;
+                    Object r = key.GetValue("SMTPAddress");
+                    string SMTPAddress = (r.ToString());
+                    emailUser = SMTPAddress;
+                    Object s = key.GetValue("SMTPPassword");
+                    string SMTPPassword = (s.ToString());
+                    if (string.IsNullOrEmpty(SMTPPassword))
+                    {
+                        emailPass = "";
+                    }
+                    else {
+                        emailPass = Crypto.Decrypt(SMTPPassword, "A7A338B93D5E3EE1C58789EE68FAB");
+                    }
+                    int ConvertEmailPort = 0;
+                    Int32.TryParse(emailPort, out ConvertEmailPort);
+                    mail.From = new MailAddress(emailUser);
+                    mail.To.Add("jtiller@hotmail.co.uk");
+                    mail.Subject = "New Benchmark File";
+                    mail.Body = "New Benchmark File";
+                    SmtpClient SmtpServer = new SmtpClient(emailServer);
                     SmtpServer.Port = (ConvertEmailPort);
                     SmtpServer.Credentials = new System.Net.NetworkCredential(emailUser, emailPass);
                     SmtpServer.EnableSsl = true;
@@ -245,11 +245,6 @@ namespace KWSNKnaBench
                 {
                     MessageBox.Show("Unable to send benchmark file: " + ex.ToString(), "E-mail Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-        }
-
-        private void fileToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

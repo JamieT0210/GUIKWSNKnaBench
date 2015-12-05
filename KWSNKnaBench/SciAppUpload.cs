@@ -1,11 +1,11 @@
 ﻿/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Author:      Jamie                                                                                                                                              //
 // Date:        02/12/2015                                                                                                                                         //
-// Description: Allows the user to upload new science apps and either archive or set as reference apps the currenct science apps                                   //            
+// Description: Allows the user to upload new science apps and either archive or set as reference apps the currenct science apps                                   //
+//            : Get location from registry rather than from file 05/12/15                                                                                          //             
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 using System;
 using System.Windows.Forms;
-using System.Xml;
 using System.IO;
 using Microsoft.Win32;
 
@@ -40,119 +40,93 @@ namespace KWSNKnaBench
         {
             if (MessageBox.Show("This will upload new science apps. Please ensure you have selected the correct folder which contains the .exe files and all required .dll files", "Copy New Files", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
             {
-                //Check if a settings file exists and get the install loc from there (prefered method)
-                if (File.Exists(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\KWSNKnaBench_Settings\Settings.xml")))
-                    try
+                //Move the .exe files to the reference folder
+                //If the user wants to use the old sci apps as reference apps
+                if (chkBoxRef.Checked) try
                     {
-                        XmlDocument doc = new XmlDocument();
-                        doc.Load(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\KWSNKnaBench_Settings\Settings.xml");
-                        XmlNode node = doc.DocumentElement.SelectSingleNode("/Settings/Settings");
-                        sciAppsLoc = node.Attributes["Location"].InnerText + @"\Knabench\Science_apps";
-                    }
-                    catch (Exception a)
-                    {
-                        //Throw nice error if unable to load file
-                        MessageBox.Show("Unable to load current Settings: {0} , please check your settings" + a.ToString(), "Unable to load Settings", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                else
-                    try
-                    {
-                        //If a settings file doesn't exist then tryu to get from the registry
-                        //Work out if its a 64 or 32 bit os and get the install location from the correct key
-                        if (Environment.Is64BitOperatingSystem)
-                        {
-                            //64bit OS
-                            RegistryKey key = Registry.LocalMachine.OpenSubKey("SOFTWARE\\WOW6432Node\\Jamie\\KWSNKnaBench");
-                            if (key != null)
-                            {
-                                Object o = key.GetValue("Path");
-                                if (o != null)
-                                {
-                                    string InstallLoc = (o.ToString());
-                                    InstallLoc = InstallLoc.Remove(InstallLoc.Length - 1);
-                                    sciAppsLoc = InstallLoc + @"\Knabench\Science_apps";
+                        RegistryKey key = Registry.CurrentUser.OpenSubKey("Software", true);
+                        key = key.OpenSubKey("Jamie", true);
+                        key = key.OpenSubKey("KWSNKnaBench", true);
+                        Object o = key.GetValue("Path");
+                        string InstallLoc = (o.ToString());
+                        InstallLoc = InstallLoc.TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar);
+                        sciAppsLoc = InstallLoc + @"\Knabench\Science_apps";
+                        sciAppsRef = (sciAppsLoc + @"\Reference");
+                        string fileExtension = "*.exe";
 
-                                }
-                            }
-                        }
-                        else
-                        {
-                            //32bit OS
-                            RegistryKey key = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Jamie\\KWSNKnaBench");
-                            if (key != null)
-                            {
-                                Object o = key.GetValue("Path");
-                                if (o != null)
-                                {
-                                    string InstallLoc = (o.ToString());
-                                    InstallLoc = InstallLoc.Remove(InstallLoc.Length - 1);
-                                    sciAppsLoc = InstallLoc + @"\Knabench\Science_apps";
+                        string[] txtFiles = Directory.GetFiles(sciAppsLoc, fileExtension);
 
-                                }
-                            }
+                        foreach (var item in txtFiles)
+                        {
+                            File.Move(item, Path.Combine(sciAppsRef, Path.GetFileName(item)));
                         }
+
+                        sciAppsRef = (sciAppsLoc + @"\Reference");
+                        fileExtension = "*.dll";
+
+                        txtFiles = Directory.GetFiles(sciAppsLoc, fileExtension);
+
+                        foreach (var item in txtFiles)
+                        {
+                            File.Move(item, Path.Combine(sciAppsRef, Path.GetFileName(item)));
+                        }
+
                     }
                     catch (Exception a)
                     {
                         //Throw nice error if unable to from registry
                         MessageBox.Show("Unable to load current Settings: {0}, please check your settings " + a.ToString(), "Unable to load Settings", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                //Move the .exe files to the reference folder
-                //If the user wants to use the old sci apps as reference apps
-                if (chkBoxRef.Checked)
-                {
-                    sciAppsRef = (sciAppsLoc + @"\Reference");
-                    string fileExtension = "*.exe";
-
-                    string[] txtFiles = Directory.GetFiles(sciAppsLoc, fileExtension);
-
-                    foreach (var item in txtFiles)
-                    {
-                        File.Move(item, Path.Combine(sciAppsRef, Path.GetFileName(item)));
-                    }
-
-                    sciAppsRef = (sciAppsLoc + @"\Reference");
-                    fileExtension = "*.dll";
-
-                    txtFiles = Directory.GetFiles(sciAppsLoc, fileExtension);
-
-                    foreach (var item in txtFiles)
-                    {
-                        File.Move(item, Path.Combine(sciAppsRef, Path.GetFileName(item)));
-                    }
-
-                }
                 else
-                //Move the *.exe files to the reserve folder
-                {
-                    sciAppsRes = (sciAppsLoc + @"\Reserve");
-                    string fileExtension = "*.exe";
-
-                    string[] txtFiles = Directory.GetFiles(sciAppsLoc, fileExtension);
-
-                    foreach (var item in txtFiles)
-                    {
-                        File.Move(item, Path.Combine(sciAppsRes, Path.GetFileName(item)));
-                    }
-                    sciAppsRes = (sciAppsLoc + @"\Reserve");
-                    fileExtension = "*.dll";
-
-                    txtFiles = Directory.GetFiles(sciAppsLoc, fileExtension);
-
-                    foreach (var item in txtFiles)
-                    {
-                        File.Move(item, Path.Combine(sciAppsRes, Path.GetFileName(item)));
-                    }
-
-                }
-                //If no location specified show an error
-                if (string.IsNullOrEmpty(txtNewSciApps.Text))
-                    {
-                    MessageBox.Show("No location specified - Please select where the new science apps are", "Move Failed", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                    }
-                else
+                    //Move the *.exe files to the reserve folder
                     try
                     {
+                        RegistryKey key = Registry.CurrentUser.OpenSubKey("Software", true);
+                        key = key.OpenSubKey("Jamie", true);
+                        key = key.OpenSubKey("KWSNKnaBench", true);
+                        Object o = key.GetValue("Path");
+                        string InstallLoc = (o.ToString());
+                        InstallLoc = InstallLoc.TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar);
+                        sciAppsLoc = InstallLoc + @"\Knabench\Science_apps";
+                        sciAppsRes = (sciAppsLoc + @"\Reserve");
+                        string fileExtension2 = "*.exe";
+
+                        string[] txtFiles2 = Directory.GetFiles(sciAppsLoc, fileExtension2);
+
+                        foreach (var item in txtFiles2)
+                        {
+                            File.Move(item, Path.Combine(sciAppsRes, Path.GetFileName(item)));
+                        }
+                        sciAppsRes = (sciAppsLoc + @"\Reserve");
+                        fileExtension2 = "*.dll";
+
+                        txtFiles2 = Directory.GetFiles(sciAppsLoc, fileExtension2);
+
+                        foreach (var item in txtFiles2)
+                        {
+                            File.Move(item, Path.Combine(sciAppsRes, Path.GetFileName(item)));
+                        }
+
+                    }
+                    catch (Exception a)
+                    {
+                        //Throw nice error if unable to from registry
+                        MessageBox.Show("Unable to load current Settings: {0}, please check your settings " + a.ToString(), "Unable to load Settings", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                //If no location specified show an error
+                if (string.IsNullOrEmpty(txtNewSciApps.Text))
+                {
+                    MessageBox.Show("No location specified - Please select where the new science apps are", "Move Failed", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
+                else try
+                    {
+                        RegistryKey key = Registry.CurrentUser.OpenSubKey("Software", true);
+                        key = key.OpenSubKey("Jamie", true);
+                        key = key.OpenSubKey("KWSNKnaBench", true);
+                        Object o = key.GetValue("Path");
+                        string InstallLoc = (o.ToString());
+                        InstallLoc = InstallLoc.TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar);
+                        sciAppsLoc = InstallLoc + @"\Knabench\Science_apps";
                         //Move all .exe and .dll files from the new location to the sci apps folder in the KnaBench folder
                         newSciApps = txtNewSciApps.Text;
                         string fileExtension = "*.exe";
@@ -173,6 +147,7 @@ namespace KWSNKnaBench
                         }
 
                         MessageBox.Show("New Science Apps moved successfully", "Move Completed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
                     }
                     catch (Exception c)
                     {
