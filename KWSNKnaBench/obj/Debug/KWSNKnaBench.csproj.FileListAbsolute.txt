@@ -1,0 +1,13 @@
+D:\Jamie\Documents\Visual Studio 2015\Projects\KWSNKnaBench\KWSNKnaBench\bin\Debug\KWSNKnaBench.exe.config
+D:\Jamie\Documents\Visual Studio 2015\Projects\KWSNKnaBench\KWSNKnaBench\bin\Debug\KWSNKnaBench.exe
+D:\Jamie\Documents\Visual Studio 2015\Projects\KWSNKnaBench\KWSNKnaBench\bin\Debug\KWSNKnaBench.pdb
+D:\Jamie\Documents\Visual Studio 2015\Projects\KWSNKnaBench\KWSNKnaBench\bin\Debug\System.Net.Http.dll
+D:\Jamie\Documents\Visual Studio 2015\Projects\KWSNKnaBench\KWSNKnaBench\bin\Debug\System.Net.Http.xml
+D:\Jamie\Documents\Visual Studio 2015\Projects\KWSNKnaBench\KWSNKnaBench\obj\Debug\KWSNKnaBench.About.resources
+D:\Jamie\Documents\Visual Studio 2015\Projects\KWSNKnaBench\KWSNKnaBench\obj\Debug\KWSNKnaBench.Main.resources
+D:\Jamie\Documents\Visual Studio 2015\Projects\KWSNKnaBench\KWSNKnaBench\obj\Debug\KWSNKnaBench.Properties.Resources.resources
+D:\Jamie\Documents\Visual Studio 2015\Projects\KWSNKnaBench\KWSNKnaBench\obj\Debug\KWSNKnaBench.SciAppUpload.resources
+D:\Jamie\Documents\Visual Studio 2015\Projects\KWSNKnaBench\KWSNKnaBench\obj\Debug\KWSNKnaBench.Settings.resources
+D:\Jamie\Documents\Visual Studio 2015\Projects\KWSNKnaBench\KWSNKnaBench\obj\Debug\KWSNKnaBench.csproj.GenerateResource.Cache
+D:\Jamie\Documents\Visual Studio 2015\Projects\KWSNKnaBench\KWSNKnaBench\obj\Debug\KWSNKnaBench.exe
+D:\Jamie\Documents\Visual Studio 2015\Projects\KWSNKnaBench\KWSNKnaBench\obj\Debug\KWSNKnaBench.pdb
