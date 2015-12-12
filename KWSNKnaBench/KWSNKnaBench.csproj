@@ -70,37 +70,37 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="About.cs">
+    <Compile Include="Screens\About.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="About.Designer.cs">
+    <Compile Include="Screens\About.Designer.cs">
       <DependentUpon>About.cs</DependentUpon>
     </Compile>
-    <Compile Include="Crypto.cs" />
-    <Compile Include="Main.cs">
+    <Compile Include="Classes\Crypto.cs" />
+    <Compile Include="Screens\Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main.Designer.cs">
+    <Compile Include="Screens\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="Classes\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SciAppUpload.cs">
+    <Compile Include="Screens\SciAppUpload.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SciAppUpload.Designer.cs">
+    <Compile Include="Screens\SciAppUpload.Designer.cs">
       <DependentUpon>SciAppUpload.cs</DependentUpon>
     </Compile>
-    <Compile Include="Settings.cs">
+    <Compile Include="Screens\Settings.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Settings.Designer.cs">
+    <Compile Include="Screens\Settings.Designer.cs">
       <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="About.resx">
+    <EmbeddedResource Include="Screens\About.resx">
       <DependentUpon>About.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main.resx">
+    <EmbeddedResource Include="Screens\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -113,10 +113,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="SciAppUpload.resx">
+    <EmbeddedResource Include="Screens\SciAppUpload.resx">
       <DependentUpon>SciAppUpload.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Settings.resx">
+    <EmbeddedResource Include="Screens\Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.manifest" />
