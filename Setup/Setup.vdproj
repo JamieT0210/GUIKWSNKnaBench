@@ -321,6 +321,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_8454053EAD3448E5B7446AFEB822C7BD"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_85FB5EF4595A43A58D5EDCB9863B75DD"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -382,12 +388,6 @@
         "Entry"
         {
         "MsmKey" = "8:_94530B5F706A47CEA96EC1D2001A98ED"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_974BDE290BAF4C658D04E963D130B53E"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -700,13 +700,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_EAE933C9223909A84E0B744B28935251"
+        "OwnerKey" = "8:_EBC736EAD2B5401CB5970B96E889E173"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_EBC736EAD2B5401CB5970B96E889E173"
+        "OwnerKey" = "8:_EAE933C9223909A84E0B744B28935251"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -796,7 +796,7 @@
                 {
                 "Name" = "8:.NET Framework"
                 "Message" = "8:[VSDNETMSG]"
-                "FrameworkVersion" = "8:.NETFramework,Version=v4.5"
+                "FrameworkVersion" = "8:.NETFramework,Version=v4.0"
                 "AllowLaterVersions" = "11:FALSE"
                 "InstallUrl" = "8:http://go.microsoft.com/fwlink/?LinkId=395269"
                 }
@@ -1824,6 +1824,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8454053EAD3448E5B7446AFEB822C7BD"
+            {
+            "SourcePath" = "8:C:\\Program Files (x86)\\Jamie\\KWSNKnaBench\\deviceQuery.exe"
+            "TargetName" = "8:deviceQuery.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_BE2116F5C7274919AC8668D2C5C15C86"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_85FB5EF4595A43A58D5EDCB9863B75DD"
             {
             "SourcePath" = "8:..\\..\\..\\..\\Desktop\\Knabench\\Tools\\cpuz_eula.txt"
@@ -2030,26 +2050,6 @@
             "TargetName" = "8:report.txt"
             "Tag" = "8:"
             "Folder" = "8:_0DA3ADE79E9C4CF9B4A2EF4B2E32A5E5"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_974BDE290BAF4C658D04E963D130B53E"
-            {
-            "SourcePath" = "8:C:\\ProgramData\\NVIDIA Corporation\\CUDA Samples\\v7.0\\1_Utilities\\deviceQuery\\Release\\deviceQuery.exe"
-            "TargetName" = "8:deviceQuery.exe"
-            "Tag" = "8:"
-            "Folder" = "8:_BE2116F5C7274919AC8668D2C5C15C86"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -3351,15 +3351,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:KWSNKnaBench"
-        "ProductCode" = "8:{0D28177A-A9FB-47EB-8E07-257F94731885}"
-        "PackageCode" = "8:{FB4B4931-8CD1-492E-A396-3B0E14F4B76D}"
+        "ProductCode" = "8:{DEF3AD65-0FF0-4411-89A8-B95FF929809C}"
+        "PackageCode" = "8:{1AC691E7-3C24-480A-8B23-C96D4D0FC542}"
         "UpgradeCode" = "8:{FED31FF1-2ADF-41D0-AD60-B5D54319C75E}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
-        "DetectNewerInstalledVersion" = "11:TRUE"
+        "DetectNewerInstalledVersion" = "11:FALSE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.0.6"
+        "ProductVersion" = "8:1.0.7"
         "Manufacturer" = "8:Jamie"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -3426,8 +3426,8 @@
                                     {
                                     "Name" = "8:[ProductName]"
                                     "Condition" = "8:"
-                                    "AlwaysCreate" = "11:FALSE"
-                                    "DeleteAtUninstall" = "11:FALSE"
+                                    "AlwaysCreate" = "11:TRUE"
+                                    "DeleteAtUninstall" = "11:TRUE"
                                     "Transitive" = "11:FALSE"
                                         "Keys"
                                         {
@@ -3512,16 +3512,30 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_3FD640309286452D8E7517300EE7C084"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_131F4FE708CD48FBAAB8BC43AB30A440"
             {
-            "Name" = "8:Shortcut to Primary output from KWSNKnaBench (Active)"
+            "Name" = "8:KWSNKnaBench"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
             "Target" = "8:_EBC736EAD2B5401CB5970B96E889E173"
-            "Folder" = "8:_BE2116F5C7274919AC8668D2C5C15C86"
+            "Folder" = "8:_DDCD908191334CF79382E0592B49B53C"
+            "WorkingFolder" = "8:_BE2116F5C7274919AC8668D2C5C15C86"
+            "Icon" = "8:_8CB4C40247FE40CDB2F28D8D7E503099"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_141B0AADDA8344B0A8F74597B11425C6"
+            {
+            "Name" = "8:KWSNKnaBench"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_EBC736EAD2B5401CB5970B96E889E173"
+            "Folder" = "8:_B92E5F6E6F024210905DEA092EB794E2"
             "WorkingFolder" = "8:_BE2116F5C7274919AC8668D2C5C15C86"
             "Icon" = "8:_8CB4C40247FE40CDB2F28D8D7E503099"
             "Feature" = "8:"
