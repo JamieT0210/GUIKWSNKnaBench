@@ -67,8 +67,8 @@ namespace KWSNKnaBench
             RegistryKey key = Registry.CurrentUser.OpenSubKey("Software", true);
             key = key.OpenSubKey("Jamie", true);
             key = key.OpenSubKey("KWSNKnaBench", true);
-            if (key != null) 
-                {
+            if (key != null)
+            {
                 Object o = key.GetValue("Path");
                 if (o != null)
                 {
@@ -117,6 +117,7 @@ namespace KWSNKnaBench
                     {
                         MessageBox.Show("Unable to move old benchmark files: {0} " + c.ToString(), "Unable to Move Archive Files", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
+
                 try
                 {
                     //Start the benchmark and redirect the output from the mbbench.cmd from a console window to the app hiding the console
@@ -170,6 +171,7 @@ namespace KWSNKnaBench
                 this.AppendText(e.Data + Environment.NewLine);
             }
         }
+
         delegate void AppendTextDelegate(string text);
 
         //Call a threadsafe method of updating the text box with the output of the bench
@@ -185,9 +187,6 @@ namespace KWSNKnaBench
                 this.txtOutput.AppendText(text);
             }
         }
-
-
-
 
         //Sends an e-mail with the benchmark file if required
         private void btnEmail_Click(object sender, EventArgs e)
@@ -245,6 +244,90 @@ namespace KWSNKnaBench
                 {
                     MessageBox.Show("Unable to send benchmark file: " + ex.ToString(), "E-mail Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+        }
+
+        private void btnGPUDetails_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                RegistryKey key = Registry.CurrentUser.OpenSubKey("Software", true);
+                key = key.OpenSubKey("Jamie", true);
+                key = key.OpenSubKey("KWSNKnaBench", true);
+                if (key != null)
+                {
+                    Object o = key.GetValue("Path");
+                    if (o != null)
+                    {
+                        string InstallLoc = (o.ToString());
+                        InstallLoc = InstallLoc.TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar);
+                        benchLoc = InstallLoc;
+
+                    }
+                }
+                //Write some details to the GPU Details tab
+                System.Diagnostics.Process process = new System.Diagnostics.Process();
+                process.StartInfo.WorkingDirectory = benchLoc;
+                process.StartInfo.UseShellExecute = false;
+                process.StartInfo.FileName = benchLoc + @"\deviceQuery.exe";
+                process.StartInfo.CreateNoWindow = true;
+                process.StartInfo.RedirectStandardInput = true;
+                process.StartInfo.RedirectStandardOutput = true;
+                process.StartInfo.RedirectStandardError = true;
+                process.ErrorDataReceived += proc_DataReceived2;
+                process.OutputDataReceived += proc_DataReceived2;
+                process.Exited += new EventHandler(ProcExited2);
+                process.StartInfo.Verb = "runas";
+                process.Start();
+                process.BeginErrorReadLine();
+                process.BeginOutputReadLine();
+            }
+            //If something goes wrong show an error message
+            catch (Exception b)
+            {
+                MessageBox.Show("Unable to get GPU Details: {0} " + b.ToString(), "Error Getting Details", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+      private void ProcExited2(object sender, System.EventArgs e)
+        {
+            Process proc = (Process)sender;
+
+            // Wait a short while to allow all console output to be processed and appended
+            // before appending the success/fail message.
+            Thread.Sleep(40);
+
+            if (proc.ExitCode == 0)
+            {
+                this.txtGpuDetails.AppendText("Success." + Environment.NewLine);
+            }
+            else {
+                this.txtGpuDetails.AppendText("Failed." + Environment.NewLine);
+            }
+
+            proc.Close();
+        }
+        //Write the line to the output window line by line
+        void proc_DataReceived2(object sender, DataReceivedEventArgs e)
+        {
+            if (e.Data != null)
+            {
+                this.AppendText2(e.Data + Environment.NewLine);
+            }
+        }
+        delegate void AppendTextDelegate2(string text);
+
+        //Call a threadsafe method of updating the text box with the output of the bench
+        private void AppendText2(string text)
+        {
+            if (this.txtGpuDetails.InvokeRequired)
+            {
+                txtGpuDetails.Invoke(new AppendTextDelegate2(this.AppendText2), new object[] {
+                    text
+                });
+            }
+            else {
+                this.txtGpuDetails.AppendText(text);
+            }
         }
     }
 }

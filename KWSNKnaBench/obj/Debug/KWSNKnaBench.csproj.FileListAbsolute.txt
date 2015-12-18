@@ -12,8 +12,6 @@ D:\Jamie\Documents\Visual Studio 2015\Projects\KWSNKnaBench\KWSNKnaBench\obj\Deb
 D:\Jamie\Documents\Visual Studio 2015\Projects\KWSNKnaBench\KWSNKnaBench\obj\Debug\KWSNKnaBench.exe
 D:\Jamie\Documents\Visual Studio 2015\Projects\KWSNKnaBench\KWSNKnaBench\obj\Debug\KWSNKnaBench.pdb
 D:\Jamie\Documents\GitHub\GUIKWSNKnaBench\KWSNKnaBench\bin\Debug\KWSNKnaBench.exe.config
-D:\Jamie\Documents\GitHub\GUIKWSNKnaBench\KWSNKnaBench\obj\Debug\KWSNKnaBench.exe
-D:\Jamie\Documents\GitHub\GUIKWSNKnaBench\KWSNKnaBench\obj\Debug\KWSNKnaBench.pdb
 D:\Jamie\Documents\GitHub\GUIKWSNKnaBench\KWSNKnaBench\bin\Debug\KWSNKnaBench.exe
 D:\Jamie\Documents\GitHub\GUIKWSNKnaBench\KWSNKnaBench\bin\Debug\KWSNKnaBench.pdb
 D:\Jamie\Documents\GitHub\GUIKWSNKnaBench\KWSNKnaBench\bin\Debug\System.Net.Http.dll
@@ -25,3 +23,5 @@ D:\Jamie\Documents\GitHub\GUIKWSNKnaBench\KWSNKnaBench\obj\Debug\KWSNKnaBench.Pr
 D:\Jamie\Documents\GitHub\GUIKWSNKnaBench\KWSNKnaBench\obj\Debug\KWSNKnaBench.SciAppUpload.resources
 D:\Jamie\Documents\GitHub\GUIKWSNKnaBench\KWSNKnaBench\obj\Debug\KWSNKnaBench.Settings.resources
 D:\Jamie\Documents\GitHub\GUIKWSNKnaBench\KWSNKnaBench\obj\Debug\KWSNKnaBench.csproj.GenerateResource.Cache
+D:\Jamie\Documents\GitHub\GUIKWSNKnaBench\KWSNKnaBench\obj\Debug\KWSNKnaBench.exe
+D:\Jamie\Documents\GitHub\GUIKWSNKnaBench\KWSNKnaBench\obj\Debug\KWSNKnaBench.pdb
