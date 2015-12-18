@@ -265,6 +265,12 @@ namespace KWSNKnaBench
                     }
                 }
                 //Write some details to the GPU Details tab
+                if (File.Exists(@"\Knabench\Testdatas\GPUDetails.txt"))
+                {
+                    System.IO.File.Delete(@"\Knabench\Testdatas\GPUDetails.txt");
+                }
+                txtGpuDetails.Clear();
+
                 System.Diagnostics.Process process = new System.Diagnostics.Process();
                 process.StartInfo.WorkingDirectory = benchLoc;
                 process.StartInfo.UseShellExecute = false;
@@ -327,6 +333,11 @@ namespace KWSNKnaBench
             }
             else {
                 this.txtGpuDetails.AppendText(text);
+                using (StreamWriter sw2 = new StreamWriter(benchLoc + @"\Knabench\Testdatas\GPUDetails.txt"))
+                {
+                    sw2.WriteLine(txtGpuDetails.Text);
+                    sw2.Close();
+                }
             }
         }
     }
