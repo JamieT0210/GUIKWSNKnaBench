@@ -3105,7 +3105,7 @@
                             "{9EF0B969-E518-4E46-987F-47570745A589}:_0DA3ADE79E9C4CF9B4A2EF4B2E32A5E5"
                             {
                             "Name" = "8:Tools"
-                            "AlwaysCreate" = "11:FALSE"
+                            "AlwaysCreate" = "11:TRUE"
                             "Condition" = "8:"
                             "Transitive" = "11:FALSE"
                             "Property" = "8:_922E9222AE534B5E921D3D26FD06CE13"
@@ -3114,7 +3114,7 @@
                                     "{9EF0B969-E518-4E46-987F-47570745A589}:_647F8D95B4C34D328E158F014C0FD3AD"
                                     {
                                     "Name" = "8:rescmpv5"
-                                    "AlwaysCreate" = "11:FALSE"
+                                    "AlwaysCreate" = "11:TRUE"
                                     "Condition" = "8:"
                                     "Transitive" = "11:FALSE"
                                     "Property" = "8:_D05A9D83A8E64D71B439D3B1650DE840"
@@ -3123,7 +3123,7 @@
                                             "{9EF0B969-E518-4E46-987F-47570745A589}:_274C1F3DC6CB4965AFC768A182DDD1B9"
                                             {
                                             "Name" = "8:doc"
-                                            "AlwaysCreate" = "11:FALSE"
+                                            "AlwaysCreate" = "11:TRUE"
                                             "Condition" = "8:"
                                             "Transitive" = "11:FALSE"
                                             "Property" = "8:_47351D9AD2294BEFAED6BACC3F04F8F8"
@@ -3134,7 +3134,7 @@
                                             "{9EF0B969-E518-4E46-987F-47570745A589}:_88D20D4ADB294920AD7A597A9F6BB888"
                                             {
                                             "Name" = "8:src"
-                                            "AlwaysCreate" = "11:FALSE"
+                                            "AlwaysCreate" = "11:TRUE"
                                             "Condition" = "8:"
                                             "Transitive" = "11:FALSE"
                                             "Property" = "8:_AFA8E3F29E8F423594132DB7EAD710DE"
@@ -3147,7 +3147,7 @@
                                     "{9EF0B969-E518-4E46-987F-47570745A589}:_69124203552F46B69E0C506FC89FA349"
                                     {
                                     "Name" = "8:rescmp"
-                                    "AlwaysCreate" = "11:FALSE"
+                                    "AlwaysCreate" = "11:TRUE"
                                     "Condition" = "8:"
                                     "Transitive" = "11:FALSE"
                                     "Property" = "8:_A85BAE5FA4624CF3A0BAD7A9E4F50FCF"
@@ -3158,7 +3158,7 @@
                                     "{9EF0B969-E518-4E46-987F-47570745A589}:_A8FDF36173324D01B1E0B19CFA6B3377"
                                     {
                                     "Name" = "8:recmpv2"
-                                    "AlwaysCreate" = "11:FALSE"
+                                    "AlwaysCreate" = "11:TRUE"
                                     "Condition" = "8:"
                                     "Transitive" = "11:FALSE"
                                     "Property" = "8:_FD4375B33F154BBE9DBE61DC60AA9627"
@@ -3169,7 +3169,7 @@
                                     "{9EF0B969-E518-4E46-987F-47570745A589}:_E867767E2AA6438D8D026A18D7388B6D"
                                     {
                                     "Name" = "8:rescmpv3"
-                                    "AlwaysCreate" = "11:FALSE"
+                                    "AlwaysCreate" = "11:TRUE"
                                     "Condition" = "8:"
                                     "Transitive" = "11:FALSE"
                                     "Property" = "8:_96F034BFAAE84DFAB39A7DA534665219"
@@ -3178,7 +3178,7 @@
                                             "{9EF0B969-E518-4E46-987F-47570745A589}:_3555A59AFA2F41D2AE5308A57A897550"
                                             {
                                             "Name" = "8:doc"
-                                            "AlwaysCreate" = "11:FALSE"
+                                            "AlwaysCreate" = "11:TRUE"
                                             "Condition" = "8:"
                                             "Transitive" = "11:FALSE"
                                             "Property" = "8:_626AA1FBAAB6427EAF015394894F6AE4"
@@ -3189,7 +3189,7 @@
                                             "{9EF0B969-E518-4E46-987F-47570745A589}:_5C73BDAA70564A229E5091055714E076"
                                             {
                                             "Name" = "8:src"
-                                            "AlwaysCreate" = "11:FALSE"
+                                            "AlwaysCreate" = "11:TRUE"
                                             "Condition" = "8:"
                                             "Transitive" = "11:FALSE"
                                             "Property" = "8:_A4645982D0A24924A568F1479D046F0B"
@@ -3204,7 +3204,7 @@
                             "{9EF0B969-E518-4E46-987F-47570745A589}:_4F9EBE15FAF14782BA7007513B140A8A"
                             {
                             "Name" = "8:TestWUs"
-                            "AlwaysCreate" = "11:FALSE"
+                            "AlwaysCreate" = "11:TRUE"
                             "Condition" = "8:"
                             "Transitive" = "11:FALSE"
                             "Property" = "8:_BC43CFCB1C5C4A60B04F544436594F31"
@@ -3215,7 +3215,7 @@
                             "{9EF0B969-E518-4E46-987F-47570745A589}:_97747DAAF2CE44CAA3911E712E26C9F0"
                             {
                             "Name" = "8:Testdatas"
-                            "AlwaysCreate" = "11:FALSE"
+                            "AlwaysCreate" = "11:TRUE"
                             "Condition" = "8:"
                             "Transitive" = "11:FALSE"
                             "Property" = "8:_EAB485D1605C4C378BE7E68A3C347AEE"
@@ -3224,7 +3224,7 @@
                                     "{9EF0B969-E518-4E46-987F-47570745A589}:_6DA7A84CDFB44F2CAE29C241BF5534F7"
                                     {
                                     "Name" = "8:Archive"
-                                    "AlwaysCreate" = "11:FALSE"
+                                    "AlwaysCreate" = "11:TRUE"
                                     "Condition" = "8:"
                                     "Transitive" = "11:FALSE"
                                     "Property" = "8:_D3A21F5A8EEB4F9CA3BCC497729825DB"
@@ -3235,7 +3235,7 @@
                                     "{9EF0B969-E518-4E46-987F-47570745A589}:_96F3A21AC51D49AE9033451D1706057D"
                                     {
                                     "Name" = "8:ref"
-                                    "AlwaysCreate" = "11:FALSE"
+                                    "AlwaysCreate" = "11:TRUE"
                                     "Condition" = "8:"
                                     "Transitive" = "11:FALSE"
                                     "Property" = "8:_F0EB3CD62EFA44C9A9713D85164F50DA"
@@ -3248,7 +3248,7 @@
                             "{9EF0B969-E518-4E46-987F-47570745A589}:_DD287E76989D4E85AF24C47C051CC248"
                             {
                             "Name" = "8:Science_apps"
-                            "AlwaysCreate" = "11:FALSE"
+                            "AlwaysCreate" = "11:TRUE"
                             "Condition" = "8:"
                             "Transitive" = "11:FALSE"
                             "Property" = "8:_E300448F8DDE49A9AFD8FADC4E5B3639"
@@ -3257,7 +3257,7 @@
                                     "{9EF0B969-E518-4E46-987F-47570745A589}:_BC510EF8B4774795858B6097B1EE8B20"
                                     {
                                     "Name" = "8:Reference"
-                                    "AlwaysCreate" = "11:FALSE"
+                                    "AlwaysCreate" = "11:TRUE"
                                     "Condition" = "8:"
                                     "Transitive" = "11:FALSE"
                                     "Property" = "8:_D8D0C23A88514CF69C4DEE588E8122F6"
@@ -3332,7 +3332,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:KWSNKnaBench"
         "ProductCode" = "8:{DEF3AD65-0FF0-4411-89A8-B95FF929809C}"
-        "PackageCode" = "8:{09DDBCF5-927E-474A-86CE-108B910EE5DC}"
+        "PackageCode" = "8:{908B65C3-7B00-4216-9F63-A0AF66B73B44}"
         "UpgradeCode" = "8:{FED31FF1-2ADF-41D0-AD60-B5D54319C75E}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -3921,7 +3921,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_DFA088F87CC14B1898AEE508FC503B5A"
             {
-            "SourcePath" = "8:..\\Debug\\deviceQueryDrv.exe"
+            "SourcePath" = "8:..\\Release\\deviceQueryDrv.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_BE2116F5C7274919AC8668D2C5C15C86"
@@ -3949,7 +3949,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_EBC736EAD2B5401CB5970B96E889E173"
             {
-            "SourcePath" = "8:..\\KWSNKnaBench\\obj\\Debug\\KWSNKnaBench.exe"
+            "SourcePath" = "8:..\\KWSNKnaBench\\obj\\Release\\KWSNKnaBench.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_BE2116F5C7274919AC8668D2C5C15C86"
