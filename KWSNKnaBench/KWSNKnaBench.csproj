@@ -58,6 +58,9 @@
     <ApplicationIcon>logo7.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="OpenHardwareMonitorLib">
+      <HintPath>..\..\OpenHardwareMonitor\Bin\Release\OpenHardwareMonitorLib.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
@@ -79,6 +82,12 @@
       <DependentUpon>About.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Crypto.cs" />
+    <Compile Include="Screens\GPUMonitor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\GPUMonitor.Designer.cs">
+      <DependentUpon>GPUMonitor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +110,9 @@
     </Compile>
     <EmbeddedResource Include="Screens\About.resx">
       <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\GPUMonitor.resx">
+      <DependentUpon>GPUMonitor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>

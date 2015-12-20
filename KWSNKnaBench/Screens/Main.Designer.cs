@@ -47,6 +47,7 @@
             this.txtGpuDetails = new System.Windows.Forms.TextBox();
             this.btnGPUDetails = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.openMonitorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -59,7 +60,8 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
+            this.fileToolStripMenuItem,
+            this.openMonitorToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(903, 33);
@@ -221,6 +223,13 @@
             this.pictureBox2.TabIndex = 7;
             this.pictureBox2.TabStop = false;
             // 
+            // openMonitorToolStripMenuItem
+            // 
+            this.openMonitorToolStripMenuItem.Name = "openMonitorToolStripMenuItem";
+            this.openMonitorToolStripMenuItem.Size = new System.Drawing.Size(137, 29);
+            this.openMonitorToolStripMenuItem.Text = "Open Monitor";
+            this.openMonitorToolStripMenuItem.Click += new System.EventHandler(this.openMonitorToolStripMenuItem_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -273,6 +282,7 @@
         private System.Windows.Forms.TextBox txtGpuDetails;
         private System.Windows.Forms.Button btnGPUDetails;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.ToolStripMenuItem openMonitorToolStripMenuItem;
     }
 }
 

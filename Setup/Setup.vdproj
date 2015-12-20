@@ -15,12 +15,6 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_027881AE0F29425BBD3A6E26D461B24C"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_05AD420A1664416DAF1E0F8D6C93146C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -810,26 +804,6 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_027881AE0F29425BBD3A6E26D461B24C"
-            {
-            "SourcePath" = "8:..\\..\\..\\..\\Desktop\\SetiBanner.jpg"
-            "TargetName" = "8:SetiBanner.jpg"
-            "Tag" = "8:"
-            "Folder" = "8:_BE2116F5C7274919AC8668D2C5C15C86"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_05AD420A1664416DAF1E0F8D6C93146C"
             {
             "SourcePath" = "8:..\\..\\..\\..\\Desktop\\Knabench\\Tools\\rescmp\\README.maverick"
@@ -3358,7 +3332,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:KWSNKnaBench"
         "ProductCode" = "8:{DEF3AD65-0FF0-4411-89A8-B95FF929809C}"
-        "PackageCode" = "8:{BA4E5CED-6A34-467D-8999-A653B76DC9DC}"
+        "PackageCode" = "8:{5B7C20BA-7F5A-4F64-8811-E0AA3F3CAC57}"
         "UpgradeCode" = "8:{FED31FF1-2ADF-41D0-AD60-B5D54319C75E}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -3947,7 +3921,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_DFA088F87CC14B1898AEE508FC503B5A"
             {
-            "SourcePath" = "8:..\\Release\\deviceQueryDrv.exe"
+            "SourcePath" = "8:..\\Debug\\deviceQueryDrv.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_BE2116F5C7274919AC8668D2C5C15C86"
@@ -3975,7 +3949,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_EBC736EAD2B5401CB5970B96E889E173"
             {
-            "SourcePath" = "8:..\\KWSNKnaBench\\obj\\Release\\KWSNKnaBench.exe"
+            "SourcePath" = "8:..\\KWSNKnaBench\\obj\\Debug\\KWSNKnaBench.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_BE2116F5C7274919AC8668D2C5C15C86"
