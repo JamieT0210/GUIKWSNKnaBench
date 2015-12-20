@@ -219,12 +219,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_539650F21DDD452EB8A9708C8EFBAD6B"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_53BEE283A7AF42C9B8817C96E5205B21"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -598,6 +592,12 @@
         "Entry"
         {
         "MsmKey" = "8:_DD5169AD92FA40659242C7F8FA7BF273"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_DFA088F87CC14B1898AEE508FC503B5A"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -3332,7 +3332,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:KWSNKnaBench"
         "ProductCode" = "8:{DEF3AD65-0FF0-4411-89A8-B95FF929809C}"
-        "PackageCode" = "8:{FC238C21-DAF9-47FA-812B-B7131CA4B867}"
+        "PackageCode" = "8:{09DDBCF5-927E-474A-86CE-108B910EE5DC}"
         "UpgradeCode" = "8:{FED31FF1-2ADF-41D0-AD60-B5D54319C75E}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -3919,9 +3919,9 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_539650F21DDD452EB8A9708C8EFBAD6B"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_DFA088F87CC14B1898AEE508FC503B5A"
             {
-            "SourcePath" = "8:..\\Release\\deviceQueryDrv.exe"
+            "SourcePath" = "8:..\\Debug\\deviceQueryDrv.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_BE2116F5C7274919AC8668D2C5C15C86"
@@ -3949,7 +3949,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_EBC736EAD2B5401CB5970B96E889E173"
             {
-            "SourcePath" = "8:..\\KWSNKnaBench\\obj\\Release\\KWSNKnaBench.exe"
+            "SourcePath" = "8:..\\KWSNKnaBench\\obj\\Debug\\KWSNKnaBench.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_BE2116F5C7274919AC8668D2C5C15C86"

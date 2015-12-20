@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KWSNKnaBench", "KWSNKnaBenc
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{4E2BDD5E-235E-4B38-AA6B-25E98A51C3B1}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "deviceQueryDrv", "C:\ProgramData\NVIDIA Corporation\CUDA Samples\v7.0\1_Utilities\deviceQueryDrv\deviceQueryDrv_vs2013.vcxproj", "{997E0757-EA74-4A4E-A0FC-47D8C8831A15}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "deviceQueryDrv", "deviceQueryDrv\deviceQueryDrv_vs2013.vcxproj", "{997E0757-EA74-4A4E-A0FC-47D8C8831A15}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
