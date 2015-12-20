@@ -34,12 +34,13 @@
             this.txtNewSciApps = new System.Windows.Forms.TextBox();
             this.btnBrowse = new System.Windows.Forms.Button();
             this.btnUpload = new System.Windows.Forms.Button();
+            this.chkMoveDll = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // chkBoxRef
             // 
             this.chkBoxRef.AutoSize = true;
-            this.chkBoxRef.Location = new System.Drawing.Point(45, 31);
+            this.chkBoxRef.Location = new System.Drawing.Point(133, 31);
             this.chkBoxRef.Name = "chkBoxRef";
             this.chkBoxRef.Size = new System.Drawing.Size(335, 24);
             this.chkBoxRef.TabIndex = 0;
@@ -49,7 +50,7 @@
             // txtNewSciApps
             // 
             this.txtNewSciApps.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNewSciApps.Location = new System.Drawing.Point(45, 76);
+            this.txtNewSciApps.Location = new System.Drawing.Point(43, 86);
             this.txtNewSciApps.Name = "txtNewSciApps";
             this.txtNewSciApps.Size = new System.Drawing.Size(622, 30);
             this.txtNewSciApps.TabIndex = 1;
@@ -57,7 +58,7 @@
             // btnBrowse
             // 
             this.btnBrowse.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBrowse.Location = new System.Drawing.Point(673, 71);
+            this.btnBrowse.Location = new System.Drawing.Point(671, 81);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(112, 43);
             this.btnBrowse.TabIndex = 2;
@@ -68,7 +69,7 @@
             // btnUpload
             // 
             this.btnUpload.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpload.Location = new System.Drawing.Point(342, 153);
+            this.btnUpload.Location = new System.Drawing.Point(340, 163);
             this.btnUpload.Name = "btnUpload";
             this.btnUpload.Size = new System.Drawing.Size(146, 84);
             this.btnUpload.TabIndex = 3;
@@ -76,12 +77,23 @@
             this.btnUpload.UseVisualStyleBackColor = true;
             this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
             // 
+            // chkMoveDll
+            // 
+            this.chkMoveDll.AutoSize = true;
+            this.chkMoveDll.Location = new System.Drawing.Point(474, 31);
+            this.chkMoveDll.Name = "chkMoveDll";
+            this.chkMoveDll.Size = new System.Drawing.Size(223, 24);
+            this.chkMoveDll.TabIndex = 4;
+            this.chkMoveDll.Text = "Move .dll\'s as well as .exe\'s";
+            this.chkMoveDll.UseVisualStyleBackColor = true;
+            // 
             // SciAppUpload
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(831, 274);
+            this.Controls.Add(this.chkMoveDll);
             this.Controls.Add(this.btnUpload);
             this.Controls.Add(this.btnBrowse);
             this.Controls.Add(this.txtNewSciApps);
@@ -101,5 +113,6 @@
         private System.Windows.Forms.TextBox txtNewSciApps;
         private System.Windows.Forms.Button btnBrowse;
         private System.Windows.Forms.Button btnUpload;
+        private System.Windows.Forms.CheckBox chkMoveDll;
     }
 }

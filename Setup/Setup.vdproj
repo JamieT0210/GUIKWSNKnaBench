@@ -3290,7 +3290,7 @@
                                     "{9EF0B969-E518-4E46-987F-47570745A589}:_D12672002579405A9DB8BE19B0E50369"
                                     {
                                     "Name" = "8:Reserve"
-                                    "AlwaysCreate" = "11:FALSE"
+                                    "AlwaysCreate" = "11:TRUE"
                                     "Condition" = "8:"
                                     "Transitive" = "11:FALSE"
                                     "Property" = "8:_423A78A8D6E14A52A0369E7F7439606F"
@@ -3332,7 +3332,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:KWSNKnaBench"
         "ProductCode" = "8:{DEF3AD65-0FF0-4411-89A8-B95FF929809C}"
-        "PackageCode" = "8:{8536129C-C367-4D62-913D-459C379113DA}"
+        "PackageCode" = "8:{FC238C21-DAF9-47FA-812B-B7131CA4B867}"
         "UpgradeCode" = "8:{FED31FF1-2ADF-41D0-AD60-B5D54319C75E}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -3921,7 +3921,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_539650F21DDD452EB8A9708C8EFBAD6B"
             {
-            "SourcePath" = "8:..\\Debug\\deviceQueryDrv.exe"
+            "SourcePath" = "8:..\\Release\\deviceQueryDrv.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_BE2116F5C7274919AC8668D2C5C15C86"
@@ -3949,7 +3949,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_EBC736EAD2B5401CB5970B96E889E173"
             {
-            "SourcePath" = "8:..\\KWSNKnaBench\\obj\\Debug\\KWSNKnaBench.exe"
+            "SourcePath" = "8:..\\KWSNKnaBench\\obj\\Release\\KWSNKnaBench.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_BE2116F5C7274919AC8668D2C5C15C86"
