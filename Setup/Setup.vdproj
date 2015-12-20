@@ -111,6 +111,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_2D63D09D91BF4102AEB99AA3CD8F9963"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_2F0A1CD378254D65B539F5FB4C181015"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -316,12 +322,6 @@
         "Entry"
         {
         "MsmKey" = "8:_82661ACC18BE49BE925126D2E741E279"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_8454053EAD3448E5B7446AFEB822C7BD"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1124,6 +1124,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2D63D09D91BF4102AEB99AA3CD8F9963"
+            {
+            "SourcePath" = "8:C:\\ProgramData\\NVIDIA Corporation\\CUDA Samples\\v7.0\\1_Utilities\\deviceQueryDrv\\Release\\deviceQueryDrv.exe"
+            "TargetName" = "8:deviceQueryDrv.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_BE2116F5C7274919AC8668D2C5C15C86"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2F0A1CD378254D65B539F5FB4C181015"
             {
             "SourcePath" = "8:..\\..\\..\\..\\Desktop\\Knabench\\Tools\\rescmpv3\\src\\sah_result.cpp"
@@ -1810,26 +1830,6 @@
             "TargetName" = "8:imagecfg.exe"
             "Tag" = "8:"
             "Folder" = "8:_0DA3ADE79E9C4CF9B4A2EF4B2E32A5E5"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8454053EAD3448E5B7446AFEB822C7BD"
-            {
-            "SourcePath" = "8:C:\\Program Files (x86)\\Jamie\\KWSNKnaBench\\deviceQuery.exe"
-            "TargetName" = "8:deviceQuery.exe"
-            "Tag" = "8:"
-            "Folder" = "8:_BE2116F5C7274919AC8668D2C5C15C86"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -3941,7 +3941,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_EBC736EAD2B5401CB5970B96E889E173"
             {
-            "SourcePath" = "8:..\\KWSNKnaBench\\obj\\Debug\\KWSNKnaBench.exe"
+            "SourcePath" = "8:..\\KWSNKnaBench\\obj\\Release\\KWSNKnaBench.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_BE2116F5C7274919AC8668D2C5C15C86"

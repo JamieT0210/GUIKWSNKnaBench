@@ -155,8 +155,7 @@
             // 
             // helpProvider1
             // 
-            this.helpProvider1.HelpNamespace = "D:\\Jamie\\Documents\\Visual Studio 2015\\Projects\\KWSNKnaBench\\KWSNKnaBench\\Resource" +
-    "s\\Help.chm";
+            this.helpProvider1.HelpNamespace = "D:\\Jamie\\Documents\\HelpNDoc\\Output\\Build chm documentation\\Help.chm";
             // 
             // tabControl1
             // 

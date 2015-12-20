@@ -274,7 +274,7 @@ namespace KWSNKnaBench
                 System.Diagnostics.Process process = new System.Diagnostics.Process();
                 process.StartInfo.WorkingDirectory = benchLoc;
                 process.StartInfo.UseShellExecute = false;
-                process.StartInfo.FileName = benchLoc + @"\deviceQuery.exe";
+                process.StartInfo.FileName = benchLoc + @"\deviceQueryDrv.exe";
                 process.StartInfo.CreateNoWindow = true;
                 process.StartInfo.RedirectStandardInput = true;
                 process.StartInfo.RedirectStandardOutput = true;

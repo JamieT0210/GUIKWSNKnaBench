@@ -134,7 +134,7 @@
             this.Controls.Add(this.lblAbout1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "About";
-            this.Text = "About KWSNKnaBench 1.06";
+            this.Text = "About KWSNKnaBench 1.07";
             this.ResumeLayout(false);
             this.PerformLayout();
 
