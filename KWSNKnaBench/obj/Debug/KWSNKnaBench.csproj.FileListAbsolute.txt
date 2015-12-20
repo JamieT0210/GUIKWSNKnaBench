@@ -15,7 +15,6 @@ D:\Jamie\Documents\GitHub\GUIKWSNKnaBench\KWSNKnaBench\bin\Debug\Resources\Help.
 D:\Jamie\Documents\GitHub\GUIKWSNKnaBench\KWSNKnaBench\bin\Debug\KWSNKnaBench.exe.config
 D:\Jamie\Documents\GitHub\GUIKWSNKnaBench\KWSNKnaBench\bin\Debug\KWSNKnaBench.exe
 D:\Jamie\Documents\GitHub\GUIKWSNKnaBench\KWSNKnaBench\bin\Debug\KWSNKnaBench.pdb
-D:\Jamie\Documents\GitHub\GUIKWSNKnaBench\KWSNKnaBench\obj\Debug\KWSNKnaBench.csprojResolveAssemblyReference.cache
 D:\Jamie\Documents\GitHub\GUIKWSNKnaBench\KWSNKnaBench\obj\Debug\KWSNKnaBench.About.resources
 D:\Jamie\Documents\GitHub\GUIKWSNKnaBench\KWSNKnaBench\obj\Debug\KWSNKnaBench.Main.resources
 D:\Jamie\Documents\GitHub\GUIKWSNKnaBench\KWSNKnaBench\obj\Debug\KWSNKnaBench.Properties.Resources.resources

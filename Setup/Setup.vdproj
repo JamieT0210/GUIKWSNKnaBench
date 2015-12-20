@@ -219,6 +219,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_539650F21DDD452EB8A9708C8EFBAD6B"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_53BEE283A7AF42C9B8817C96E5205B21"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -574,12 +580,6 @@
         "Entry"
         {
         "MsmKey" = "8:_D775F4BF7DFF4079AFA07B455E3E02D6"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_D79103CC6C5444C8909A1ACCBC3E778F"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -3096,7 +3096,7 @@
                     "{9EF0B969-E518-4E46-987F-47570745A589}:_EED54D3C1A774D07B38AE579ADCBFEF8"
                     {
                     "Name" = "8:Knabench"
-                    "AlwaysCreate" = "11:FALSE"
+                    "AlwaysCreate" = "11:TRUE"
                     "Condition" = "8:"
                     "Transitive" = "11:FALSE"
                     "Property" = "8:_09F40EFF182A4D108AEEF10026AF9C1A"
@@ -3332,7 +3332,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:KWSNKnaBench"
         "ProductCode" = "8:{DEF3AD65-0FF0-4411-89A8-B95FF929809C}"
-        "PackageCode" = "8:{1AC691E7-3C24-480A-8B23-C96D4D0FC542}"
+        "PackageCode" = "8:{8536129C-C367-4D62-913D-459C379113DA}"
         "UpgradeCode" = "8:{FED31FF1-2ADF-41D0-AD60-B5D54319C75E}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -3919,7 +3919,7 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_D79103CC6C5444C8909A1ACCBC3E778F"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_539650F21DDD452EB8A9708C8EFBAD6B"
             {
             "SourcePath" = "8:..\\Debug\\deviceQueryDrv.exe"
             "TargetName" = "8:"
