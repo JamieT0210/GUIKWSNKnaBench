@@ -52,65 +52,37 @@ namespace KWSNKnaBench.Screens
                     lstGPUValues.Items.Add(String.Format(Hardware.Name) + " - Device: " + LastChar);
                 }
             }
-            //Core Temp
             foreach (var Hardware in c.Hardware)
             {
                 if ((Hardware.HardwareType == HardwareType.GpuNvidia) || (Hardware.HardwareType == HardwareType.GpuAti))
                 {
                     Hardware.Update();
                 }
+                //Core Temp
                 foreach (var sensor in Hardware.Sensors)
                     if (sensor.SensorType == SensorType.Temperature)
                     {
                         lstGPUValues.Items.Add(String.Format("{0} Temperature = {1}", sensor.Name, sensor.Value.HasValue ? sensor.Value.Value.ToString() : "no value") + " C");
                     }
-            }
-            //Fan Speed
-            foreach (var Hardware in c.Hardware)
-            {
-                if ((Hardware.HardwareType == HardwareType.GpuNvidia) || (Hardware.HardwareType == HardwareType.GpuAti))
-                {
-                    Hardware.Update();
-                }
+                //Fan Speed
                 foreach (var sensor in Hardware.Sensors)
                     if (sensor.SensorType == SensorType.Fan)
                     {
                         lstGPUValues.Items.Add(String.Format("{0} Fan = {1}", sensor.Name, sensor.Value.HasValue ? sensor.Value.Value.ToString() : "no value") + " RPM");
                     }
-            }
-            //Fan Percentage
-            foreach (var Hardware in c.Hardware)
-            {
-                if ((Hardware.HardwareType == HardwareType.GpuNvidia) || (Hardware.HardwareType == HardwareType.GpuAti))
-                {
-                    Hardware.Update();
-                }
+                //Fan %
                 foreach (var sensor in Hardware.Sensors)
                     if (sensor.SensorType == SensorType.Control)
                     {
                         lstGPUValues.Items.Add(String.Format("{0} Control = {1}", sensor.Name, sensor.Value.HasValue ? sensor.Value.Value.ToString() : "no value") + " %");
                     }
-            }
-            //GPU Clock Speeds
-            foreach (var Hardware in c.Hardware)
-            {
-                if ((Hardware.HardwareType == HardwareType.GpuNvidia) || (Hardware.HardwareType == HardwareType.GpuAti))
-                {
-                    Hardware.Update();
-                }
+                //GPU Clocks
                 foreach (var sensor in Hardware.Sensors)
                     if (sensor.SensorType == SensorType.Clock)
                     {
                         lstGPUValues.Items.Add(String.Format("{0} Clock = {1}", sensor.Name, sensor.Value.HasValue ? sensor.Value.Value.ToString() : "no value") + " MHz");
                     }
-            }
-            //GPU Loads
-            foreach (var Hardware in c.Hardware)
-            {
-                if ((Hardware.HardwareType == HardwareType.GpuNvidia) || (Hardware.HardwareType == HardwareType.GpuAti))
-                {
-                    Hardware.Update();
-                }
+                //GPU Load
                 foreach (var sensor in Hardware.Sensors)
                     if (sensor.SensorType == SensorType.Load)
                     {
