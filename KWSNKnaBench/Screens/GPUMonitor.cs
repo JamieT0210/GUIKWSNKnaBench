@@ -6,8 +6,13 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-//using OpenHardwareMonitor;
 using OpenHardwareMonitor.Hardware;
+
+//All values here are taken from the Open Source Open Hardware Monitor Library
+//And are refreshed frequently
+//I think this should only return device 0 values
+//But need a multi-GPU host to test this
+//Should return values for either a Nvidia or ATI GPU
 
 namespace KWSNKnaBench.Screens
 {
@@ -15,11 +20,10 @@ namespace KWSNKnaBench.Screens
     {
         public GPUMonitor()
         {
-       //     InitializeComponent();
             InitializeComponent();
             var timer = new Timer();
             timer.Tick += new EventHandler(timer_Tick);
-            timer.Interval = 1000; 
+            timer.Interval = 1000;
             timer.Start();
         }
 
@@ -27,38 +31,91 @@ namespace KWSNKnaBench.Screens
         {
             Computer c = new Computer()
             {
+                //Enabled the GPU Settings
                 GPUEnabled = true
             };
             c.Open();
+            //Clear oput the list box
+            lstGPUValues.Items.Clear();
+
+            //For each hardware type get a value if one exists
+            //Print the GPU Name
             foreach (var Hardware in c.Hardware)
             {
-                if (Hardware.HardwareType == HardwareType.GpuNvidia) Hardware.Update();
-                foreach (var sensor in Hardware.Sensors)
-                    if (sensor.SensorType == SensorType.Temperature) txtGPUTemp.Text = Convert.ToString(sensor.Value);
+                if ((Hardware.HardwareType == HardwareType.GpuNvidia) || (Hardware.HardwareType == HardwareType.GpuAti))
+                {
+                    Hardware.Update();
+                    string LastCharTemp = null;
+                    char LastChar;
+                    LastCharTemp = Convert.ToString(Hardware.Identifier);
+                    LastChar = LastCharTemp[LastCharTemp.Length - 1];
+                    lstGPUValues.Items.Add(String.Format(Hardware.Name) + " - Device: " + LastChar);
+                }
             }
+            //Core Temp
             foreach (var Hardware in c.Hardware)
             {
-                if (Hardware.HardwareType == HardwareType.GpuNvidia) Hardware.Update();
+                if ((Hardware.HardwareType == HardwareType.GpuNvidia) || (Hardware.HardwareType == HardwareType.GpuAti))
+                {
+                    Hardware.Update();
+                }
                 foreach (var sensor in Hardware.Sensors)
-                    if (sensor.SensorType == SensorType.Fan) txtGPUFan.Text = Convert.ToString(sensor.Value);
+                    if (sensor.SensorType == SensorType.Temperature)
+                    {
+                        lstGPUValues.Items.Add(String.Format("{0} Temperature = {1}", sensor.Name, sensor.Value.HasValue ? sensor.Value.Value.ToString() : "no value") + " C");
+                    }
             }
+            //Fan Speed
             foreach (var Hardware in c.Hardware)
             {
-                if (Hardware.HardwareType == HardwareType.GpuNvidia) Hardware.Update();
+                if ((Hardware.HardwareType == HardwareType.GpuNvidia) || (Hardware.HardwareType == HardwareType.GpuAti))
+                {
+                    Hardware.Update();
+                }
                 foreach (var sensor in Hardware.Sensors)
-                    if (sensor.SensorType == SensorType.Control) txtGPUFanSpeed.Text = Convert.ToString(sensor.Value);
+                    if (sensor.SensorType == SensorType.Fan)
+                    {
+                        lstGPUValues.Items.Add(String.Format("{0} Fan = {1}", sensor.Name, sensor.Value.HasValue ? sensor.Value.Value.ToString() : "no value") + " RPM");
+                    }
             }
+            //Fan Percentage
             foreach (var Hardware in c.Hardware)
             {
-                if (Hardware.HardwareType == HardwareType.GpuNvidia) Hardware.Update();
+                if ((Hardware.HardwareType == HardwareType.GpuNvidia) || (Hardware.HardwareType == HardwareType.GpuAti))
+                {
+                    Hardware.Update();
+                }
                 foreach (var sensor in Hardware.Sensors)
-                    if (sensor.SensorType == SensorType.Load) txtGPUMem.Text = Convert.ToString(Math.Round((double)sensor.Value, 1));
+                    if (sensor.SensorType == SensorType.Control)
+                    {
+                        lstGPUValues.Items.Add(String.Format("{0} Control = {1}", sensor.Name, sensor.Value.HasValue ? sensor.Value.Value.ToString() : "no value") + " %");
+                    }
             }
+            //GPU Clock Speeds
             foreach (var Hardware in c.Hardware)
             {
-                if (Hardware.HardwareType == HardwareType.GpuNvidia) Hardware.Update();
+                if ((Hardware.HardwareType == HardwareType.GpuNvidia) || (Hardware.HardwareType == HardwareType.GpuAti))
+                {
+                    Hardware.Update();
+                }
                 foreach (var sensor in Hardware.Sensors)
-                    if (sensor.SensorType == SensorType.Clock) txtGPUCore.Text = Convert.ToString(Math.Round((double)sensor.Value / 2, 1));
+                    if (sensor.SensorType == SensorType.Clock)
+                    {
+                        lstGPUValues.Items.Add(String.Format("{0} Clock = {1}", sensor.Name, sensor.Value.HasValue ? sensor.Value.Value.ToString() : "no value") + " MHz");
+                    }
+            }
+            //GPU Loads
+            foreach (var Hardware in c.Hardware)
+            {
+                if ((Hardware.HardwareType == HardwareType.GpuNvidia) || (Hardware.HardwareType == HardwareType.GpuAti))
+                {
+                    Hardware.Update();
+                }
+                foreach (var sensor in Hardware.Sensors)
+                    if (sensor.SensorType == SensorType.Load)
+                    {
+                        lstGPUValues.Items.Add(String.Format("{0} Load = {1}", sensor.Name, sensor.Value.HasValue ? sensor.Value.Value.ToString() : "no value") + " %");
+                    }
             }
         }
     }
