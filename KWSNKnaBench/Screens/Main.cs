@@ -5,7 +5,6 @@
 //            : Amended to get settings from registry rather than file 05/12/15                                                                                    //                  
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
 using System;
-using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 using System.Diagnostics;

@@ -36,6 +36,7 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openMonitorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtOutput = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnRunBench = new System.Windows.Forms.Button();
@@ -47,7 +48,6 @@
             this.txtGpuDetails = new System.Windows.Forms.TextBox();
             this.btnGPUDetails = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.openMonitorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -114,6 +114,13 @@
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(242, 30);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // openMonitorToolStripMenuItem
+            // 
+            this.openMonitorToolStripMenuItem.Name = "openMonitorToolStripMenuItem";
+            this.openMonitorToolStripMenuItem.Size = new System.Drawing.Size(137, 29);
+            this.openMonitorToolStripMenuItem.Text = "Open Monitor";
+            this.openMonitorToolStripMenuItem.Click += new System.EventHandler(this.openMonitorToolStripMenuItem_Click);
             // 
             // txtOutput
             // 
@@ -223,13 +230,6 @@
             this.pictureBox2.TabIndex = 7;
             this.pictureBox2.TabStop = false;
             // 
-            // openMonitorToolStripMenuItem
-            // 
-            this.openMonitorToolStripMenuItem.Name = "openMonitorToolStripMenuItem";
-            this.openMonitorToolStripMenuItem.Size = new System.Drawing.Size(137, 29);
-            this.openMonitorToolStripMenuItem.Text = "Open Monitor";
-            this.openMonitorToolStripMenuItem.Click += new System.EventHandler(this.openMonitorToolStripMenuItem_Click);
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -243,6 +243,7 @@
             this.Controls.Add(this.btnRunBench);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Main";

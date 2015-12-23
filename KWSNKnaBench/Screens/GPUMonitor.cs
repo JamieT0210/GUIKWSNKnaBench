@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using OpenHardwareMonitor.Hardware;
 
@@ -18,6 +12,7 @@ namespace KWSNKnaBench.Screens
 {
     public partial class GPUMonitor : Form
     {
+   
         public GPUMonitor()
         {
             InitializeComponent();
@@ -25,7 +20,8 @@ namespace KWSNKnaBench.Screens
             timer.Tick += new EventHandler(timer_Tick);
             timer.Interval = 1000;
             timer.Start();
-        }
+
+       }
 
         void timer_Tick(object sender, EventArgs e)
         {
@@ -62,33 +58,33 @@ namespace KWSNKnaBench.Screens
                 foreach (var sensor in Hardware.Sensors)
                     if (sensor.SensorType == SensorType.Temperature)
                     {
-                        lstGPUValues.Items.Add(String.Format("{0} Temperature = {1}", sensor.Name, sensor.Value.HasValue ? sensor.Value.Value.ToString() : "no value") + " C");
+                        lstGPUValues.Items.Add(String.Format("{0} Temperature = {1}", sensor.Name, sensor.Value.HasValue ? sensor.Value.Value.ToString() : "No Value") + " C");
                     }
                 //Fan Speed
                 foreach (var sensor in Hardware.Sensors)
                     if (sensor.SensorType == SensorType.Fan)
                     {
-                        lstGPUValues.Items.Add(String.Format("{0} Fan = {1}", sensor.Name, sensor.Value.HasValue ? sensor.Value.Value.ToString() : "no value") + " RPM");
+                        lstGPUValues.Items.Add(String.Format("{0} Fan = {1}", sensor.Name, sensor.Value.HasValue ? sensor.Value.Value.ToString() : "No Value") + " RPM");
                     }
                 //Fan %
                 foreach (var sensor in Hardware.Sensors)
                     if (sensor.SensorType == SensorType.Control)
                     {
-                        lstGPUValues.Items.Add(String.Format("{0} Control = {1}", sensor.Name, sensor.Value.HasValue ? sensor.Value.Value.ToString() : "no value") + " %");
+                        lstGPUValues.Items.Add(String.Format("{0} Control = {1}", sensor.Name, sensor.Value.HasValue ? sensor.Value.Value.ToString() : "No Value") + " %");
                     }
                 //GPU Clocks
                 foreach (var sensor in Hardware.Sensors)
                     if (sensor.SensorType == SensorType.Clock)
                     {
-                        lstGPUValues.Items.Add(String.Format("{0} Clock = {1}", sensor.Name, sensor.Value.HasValue ? sensor.Value.Value.ToString() : "no value") + " MHz");
+                        lstGPUValues.Items.Add(String.Format("{0} Clock = {1}", sensor.Name, sensor.Value.HasValue ? sensor.Value.Value.ToString() : "No Value") + " MHz");
                     }
                 //GPU Load
                 foreach (var sensor in Hardware.Sensors)
                     if (sensor.SensorType == SensorType.Load)
                     {
-                        lstGPUValues.Items.Add(String.Format("{0} Load = {1}", sensor.Name, sensor.Value.HasValue ? sensor.Value.Value.ToString() : "no value") + " %");
+                        lstGPUValues.Items.Add(String.Format("{0} Load = {1}", sensor.Name, sensor.Value.HasValue ? sensor.Value.Value.ToString() : "No Value") + " %");
                     }
             }
         }
     }
-}
+}   

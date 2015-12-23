@@ -132,9 +132,10 @@
             this.Controls.Add(this.lblAbout3);
             this.Controls.Add(this.lblAbout2);
             this.Controls.Add(this.lblAbout1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "About";
-            this.Text = "About KWSNKnaBench 1.07";
+            this.Text = "About KWSNKnaBench 1.0.8";
             this.ResumeLayout(false);
             this.PerformLayout();
 

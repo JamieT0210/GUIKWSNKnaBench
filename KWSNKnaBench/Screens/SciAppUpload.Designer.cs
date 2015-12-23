@@ -98,6 +98,7 @@
             this.Controls.Add(this.btnBrowse);
             this.Controls.Add(this.txtNewSciApps);
             this.Controls.Add(this.chkBoxRef);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SciAppUpload";
             this.Text = "Upload Science Apps";

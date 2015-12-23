@@ -49,14 +49,14 @@
             // txtBenchLoc
             // 
             this.txtBenchLoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBenchLoc.Location = new System.Drawing.Point(260, 26);
+            this.txtBenchLoc.Location = new System.Drawing.Point(260, 16);
             this.txtBenchLoc.Name = "txtBenchLoc";
             this.txtBenchLoc.Size = new System.Drawing.Size(809, 30);
             this.txtBenchLoc.TabIndex = 0;
             // 
             // btnBrowse
             // 
-            this.btnBrowse.Location = new System.Drawing.Point(1075, 26);
+            this.btnBrowse.Location = new System.Drawing.Point(1075, 16);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(75, 32);
             this.btnBrowse.TabIndex = 1;
@@ -66,7 +66,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(696, 209);
+            this.btnSave.Location = new System.Drawing.Point(696, 199);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(148, 46);
             this.btnSave.TabIndex = 6;
@@ -77,7 +77,7 @@
             // txtSMTPServer
             // 
             this.txtSMTPServer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSMTPServer.Location = new System.Drawing.Point(260, 62);
+            this.txtSMTPServer.Location = new System.Drawing.Point(260, 52);
             this.txtSMTPServer.Name = "txtSMTPServer";
             this.txtSMTPServer.Size = new System.Drawing.Size(809, 30);
             this.txtSMTPServer.TabIndex = 2;
@@ -86,7 +86,7 @@
             // 
             this.lblEmailServer.AutoSize = true;
             this.lblEmailServer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmailServer.Location = new System.Drawing.Point(65, 67);
+            this.lblEmailServer.Location = new System.Drawing.Point(65, 57);
             this.lblEmailServer.Name = "lblEmailServer";
             this.lblEmailServer.Size = new System.Drawing.Size(178, 22);
             this.lblEmailServer.TabIndex = 4;
@@ -96,7 +96,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(9, 31);
+            this.label1.Location = new System.Drawing.Point(9, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(234, 22);
             this.label1.TabIndex = 5;
@@ -106,7 +106,7 @@
             // 
             this.lblSMTPPort.AutoSize = true;
             this.lblSMTPPort.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSMTPPort.Location = new System.Drawing.Point(85, 106);
+            this.lblSMTPPort.Location = new System.Drawing.Point(85, 96);
             this.lblSMTPPort.Name = "lblSMTPPort";
             this.lblSMTPPort.Size = new System.Drawing.Size(158, 22);
             this.lblSMTPPort.TabIndex = 7;
@@ -115,7 +115,7 @@
             // txtSMTPPort
             // 
             this.txtSMTPPort.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSMTPPort.Location = new System.Drawing.Point(260, 101);
+            this.txtSMTPPort.Location = new System.Drawing.Point(260, 91);
             this.txtSMTPPort.Name = "txtSMTPPort";
             this.txtSMTPPort.Size = new System.Drawing.Size(809, 30);
             this.txtSMTPPort.TabIndex = 3;
@@ -124,7 +124,7 @@
             // 
             this.lblEmailUser.AutoSize = true;
             this.lblEmailUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmailUser.Location = new System.Drawing.Point(91, 142);
+            this.lblEmailUser.Location = new System.Drawing.Point(91, 132);
             this.lblEmailUser.Name = "lblEmailUser";
             this.lblEmailUser.Size = new System.Drawing.Size(152, 22);
             this.lblEmailUser.TabIndex = 9;
@@ -134,7 +134,7 @@
             // txtEmailUser
             // 
             this.txtEmailUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmailUser.Location = new System.Drawing.Point(260, 137);
+            this.txtEmailUser.Location = new System.Drawing.Point(260, 127);
             this.txtEmailUser.Name = "txtEmailUser";
             this.txtEmailUser.Size = new System.Drawing.Size(809, 30);
             this.txtEmailUser.TabIndex = 4;
@@ -143,7 +143,7 @@
             // 
             this.lblEmailPassword.AutoSize = true;
             this.lblEmailPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmailPassword.Location = new System.Drawing.Point(94, 178);
+            this.lblEmailPassword.Location = new System.Drawing.Point(94, 168);
             this.lblEmailPassword.Name = "lblEmailPassword";
             this.lblEmailPassword.Size = new System.Drawing.Size(149, 22);
             this.lblEmailPassword.TabIndex = 11;
@@ -153,7 +153,7 @@
             // txtEmailPass
             // 
             this.txtEmailPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmailPass.Location = new System.Drawing.Point(260, 173);
+            this.txtEmailPass.Location = new System.Drawing.Point(260, 163);
             this.txtEmailPass.Name = "txtEmailPass";
             this.txtEmailPass.Size = new System.Drawing.Size(809, 30);
             this.txtEmailPass.TabIndex = 5;
@@ -161,7 +161,7 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(542, 209);
+            this.btnClear.Location = new System.Drawing.Point(542, 199);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(148, 46);
             this.btnClear.TabIndex = 13;
@@ -172,7 +172,7 @@
             // chkBoxShowPwd
             // 
             this.chkBoxShowPwd.AutoSize = true;
-            this.chkBoxShowPwd.Location = new System.Drawing.Point(1076, 178);
+            this.chkBoxShowPwd.Location = new System.Drawing.Point(1076, 168);
             this.chkBoxShowPwd.Name = "chkBoxShowPwd";
             this.chkBoxShowPwd.Size = new System.Drawing.Size(148, 24);
             this.chkBoxShowPwd.TabIndex = 15;
@@ -182,7 +182,7 @@
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(388, 209);
+            this.btnRefresh.Location = new System.Drawing.Point(388, 199);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(148, 46);
             this.btnRefresh.TabIndex = 16;
@@ -195,7 +195,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1233, 281);
+            this.ClientSize = new System.Drawing.Size(1233, 260);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.chkBoxShowPwd);
             this.Controls.Add(this.btnClear);
@@ -211,6 +211,7 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnBrowse);
             this.Controls.Add(this.txtBenchLoc);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Settings";
             this.Text = "Settings";

@@ -249,6 +249,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_5E7CC40A070E368A36A779B8C0C21A0A"
+        "OwnerKey" = "8:_EBC736EAD2B5401CB5970B96E889E173"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_5EBC97677894451AA8FBE12BA5E2237F"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -707,6 +713,12 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_EAE933C9223909A84E0B744B28935251"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_5E7CC40A070E368A36A779B8C0C21A0A"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -1582,6 +1594,32 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_5E7CC40A070E368A36A779B8C0C21A0A"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:OpenHardwareMonitorLib, Version=0.7.1.2, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                }
+            "SourcePath" = "8:OpenHardwareMonitorLib.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_BE2116F5C7274919AC8668D2C5C15C86"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5EBC97677894451AA8FBE12BA5E2237F"
@@ -2831,11 +2869,6 @@
             "AssemblyAsmDisplayName" = "8:System.Net.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_EAE933C9223909A84E0B744B28935251"
-                    {
-                    "Name" = "8:System.Net.Http.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:System.Net.Http.dll"
             "TargetName" = "8:"
@@ -3331,15 +3364,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:KWSNKnaBench"
-        "ProductCode" = "8:{DEF3AD65-0FF0-4411-89A8-B95FF929809C}"
-        "PackageCode" = "8:{5B7C20BA-7F5A-4F64-8811-E0AA3F3CAC57}"
+        "ProductCode" = "8:{382401C2-28B3-4AEE-A629-7B1FC8BEF489}"
+        "PackageCode" = "8:{EF3DF913-6E4F-42C7-AE21-382B29D2471F}"
         "UpgradeCode" = "8:{FED31FF1-2ADF-41D0-AD60-B5D54319C75E}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.0.7"
+        "ProductVersion" = "8:1.0.8"
         "Manufacturer" = "8:Jamie"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -3921,7 +3954,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_DFA088F87CC14B1898AEE508FC503B5A"
             {
-            "SourcePath" = "8:..\\Debug\\deviceQueryDrv.exe"
+            "SourcePath" = "8:..\\Release\\deviceQueryDrv.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_BE2116F5C7274919AC8668D2C5C15C86"
@@ -3949,7 +3982,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_EBC736EAD2B5401CB5970B96E889E173"
             {
-            "SourcePath" = "8:..\\KWSNKnaBench\\obj\\Debug\\KWSNKnaBench.exe"
+            "SourcePath" = "8:..\\KWSNKnaBench\\obj\\Release\\KWSNKnaBench.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_BE2116F5C7274919AC8668D2C5C15C86"
