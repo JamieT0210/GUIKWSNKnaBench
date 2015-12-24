@@ -1,15 +1,7 @@
-﻿/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Author:      Jamie                                                                                                                                              //
-// Date:        02/12/2015                                                                                                                                         //
-// Description: Allows the user to set various settings for the apps to work these include:                                                                        //  
-//                  1. The location of the KnaBench folder (if not useing the supplied folder)                                                                     //
-//                  2. The smtp settings of their e-mail provider - only SMTP email supported for now                                                              //
-//                  3. All setttings now stored to the registry and added encryption of password 05/12/15                                                          //                                                                                  
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+﻿using Microsoft.Win32;
 using System;
-using System.Windows.Forms;
 using System.IO;
-using Microsoft.Win32;
+using System.Windows.Forms;
 
 namespace KWSNKnaBench
 {

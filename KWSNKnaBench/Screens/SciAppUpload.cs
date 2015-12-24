@@ -1,13 +1,7 @@
-﻿/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Author:      Jamie                                                                                                                                              //
-// Date:        02/12/2015                                                                                                                                         //
-// Description: Allows the user to upload new science apps and either archive or set as reference apps the currenct science apps                                   //
-//            : Get location from registry rather than from file 05/12/15                                                                                          //             
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+﻿using Microsoft.Win32;
 using System;
-using System.Windows.Forms;
 using System.IO;
-using Microsoft.Win32;
+using System.Windows.Forms;
 
 namespace KWSNKnaBench {
 	public partial class SciAppUpload: Form {
