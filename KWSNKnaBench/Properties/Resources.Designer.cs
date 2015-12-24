@@ -113,6 +113,16 @@ namespace KWSNKnaBench.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap nvidia_icon {
+            get {
+                object obj = ResourceManager.GetObject("nvidia icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap performance_clock_speed_512 {
             get {
                 object obj = ResourceManager.GetObject("performance-clock-speed-512", resourceCulture);

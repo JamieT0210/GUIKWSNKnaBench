@@ -222,7 +222,7 @@
             // 
             // picNvidia
             // 
-            this.picNvidia.Image = ((System.Drawing.Image)(resources.GetObject("picNvidia.Image")));
+            this.picNvidia.Image = global::KWSNKnaBench.Properties.Resources.nvidia_icon;
             this.picNvidia.Location = new System.Drawing.Point(23, 51);
             this.picNvidia.Name = "picNvidia";
             this.picNvidia.Size = new System.Drawing.Size(119, 119);

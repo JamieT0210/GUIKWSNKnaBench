@@ -164,6 +164,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo7.ico" />
+    <None Include="Resources\nvidia icon.jpg" />
     <None Include="Resources\fan.jpg" />
     <None Include="Resources\performance-clock-speed-512.png" />
     <None Include="Resources\clock.jpg" />
