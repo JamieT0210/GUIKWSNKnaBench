@@ -1,18 +1,12 @@
-﻿/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Author:      Jamie                                                                                                                                              //
-// Date:        02/12/2015                                                                                                                                         //
-// Description: Main screen of the app - allows user to open other screens\run the benchmark and email out the benchmark file                                      //
-//            : Amended to get settings from registry rather than file 05/12/15                                                                                    //                  
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+﻿using Microsoft.Win32;
 using System;
-using System.Linq;
-using System.Windows.Forms;
 using System.Diagnostics;
-using System.Threading;
 using System.IO;
-using System.Text.RegularExpressions;
+using System.Linq;
 using System.Net.Mail;
-using Microsoft.Win32;
+using System.Text.RegularExpressions;
+using System.Threading;
+using System.Windows.Forms;
 
 namespace KWSNKnaBench
 {
@@ -34,12 +28,15 @@ namespace KWSNKnaBench
         {
             Settings Check = new Settings();
             Check.Show();
+
         }
         private void newMonitorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             KWSNKnaBench.Screens.newGPUMonitor Check = new KWSNKnaBench.Screens.newGPUMonitor();
             Check.Show();
+            Check.DesktopLocation = new System.Drawing.Point(this.DesktopLocation.X + this.Width, this.DesktopLocation.Y);
         }
+
         //Launch Upload Sci Apps form
         private void uploadNewAppsToolStripMenuItem_Click(object sender, EventArgs e)
         {

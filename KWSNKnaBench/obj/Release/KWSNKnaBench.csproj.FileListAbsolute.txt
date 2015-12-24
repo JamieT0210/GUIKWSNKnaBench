@@ -16,7 +16,6 @@ D:\Jamie\Documents\GitHub\GUIKWSNKnaBench\KWSNKnaBench\bin\Release\KWSNKnaBench.
 D:\Jamie\Documents\GitHub\GUIKWSNKnaBench\KWSNKnaBench\bin\Release\KWSNKnaBench.pdb
 D:\Jamie\Documents\GitHub\GUIKWSNKnaBench\KWSNKnaBench\bin\Release\OpenHardwareMonitorLib.dll
 D:\Jamie\Documents\GitHub\GUIKWSNKnaBench\KWSNKnaBench\obj\Release\KWSNKnaBench.About.resources
-D:\Jamie\Documents\GitHub\GUIKWSNKnaBench\KWSNKnaBench\obj\Release\KWSNKnaBench.Screens.GPUMonitor.resources
 D:\Jamie\Documents\GitHub\GUIKWSNKnaBench\KWSNKnaBench\obj\Release\KWSNKnaBench.Main.resources
 D:\Jamie\Documents\GitHub\GUIKWSNKnaBench\KWSNKnaBench\obj\Release\KWSNKnaBench.Properties.Resources.resources
 D:\Jamie\Documents\GitHub\GUIKWSNKnaBench\KWSNKnaBench\obj\Release\KWSNKnaBench.SciAppUpload.resources
@@ -24,5 +23,4 @@ D:\Jamie\Documents\GitHub\GUIKWSNKnaBench\KWSNKnaBench\obj\Release\KWSNKnaBench.
 D:\Jamie\Documents\GitHub\GUIKWSNKnaBench\KWSNKnaBench\obj\Release\KWSNKnaBench.csproj.GenerateResource.Cache
 D:\Jamie\Documents\GitHub\GUIKWSNKnaBench\KWSNKnaBench\obj\Release\KWSNKnaBench.exe
 D:\Jamie\Documents\GitHub\GUIKWSNKnaBench\KWSNKnaBench\obj\Release\KWSNKnaBench.pdb
-D:\Jamie\Documents\GitHub\GUIKWSNKnaBench\KWSNKnaBench\obj\Release\KWSNKnaBench.csprojResolveAssemblyReference.cache
 D:\Jamie\Documents\GitHub\GUIKWSNKnaBench\KWSNKnaBench\obj\Release\KWSNKnaBench.Screens.newGPUMonitor.resources

@@ -345,12 +345,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_8CB4C40247FE40CDB2F28D8D7E503099"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_8D0C2031F99F4D888EF5DA7EDD82296A"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -579,6 +573,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_D52A28B7A8B946DE9BC84512B028DFD5"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_D775F4BF7DFF4079AFA07B455E3E02D6"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -712,13 +712,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_EAE933C9223909A84E0B744B28935251"
+        "OwnerKey" = "8:_5E7CC40A070E368A36A779B8C0C21A0A"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_5E7CC40A070E368A36A779B8C0C21A0A"
+        "OwnerKey" = "8:_EAE933C9223909A84E0B744B28935251"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -1603,6 +1603,11 @@
             "AssemblyAsmDisplayName" = "8:OpenHardwareMonitorLib, Version=0.7.1.2, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
+                    "_5E7CC40A070E368A36A779B8C0C21A0A"
+                    {
+                    "Name" = "8:OpenHardwareMonitorLib.dll"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:OpenHardwareMonitorLib.dll"
             "TargetName" = "8:"
@@ -1908,26 +1913,6 @@
             "TargetName" = "8:time.tmp"
             "Tag" = "8:"
             "Folder" = "8:_97747DAAF2CE44CAA3911E712E26C9F0"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8CB4C40247FE40CDB2F28D8D7E503099"
-            {
-            "SourcePath" = "8:..\\..\\..\\..\\Desktop\\logo7.ico"
-            "TargetName" = "8:logo7.ico"
-            "Tag" = "8:"
-            "Folder" = "8:_BE2116F5C7274919AC8668D2C5C15C86"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -2702,6 +2687,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D52A28B7A8B946DE9BC84512B028DFD5"
+            {
+            "SourcePath" = "8:..\\KWSNKnaBench\\Resources\\logo7.ico"
+            "TargetName" = "8:logo7.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_BE2116F5C7274919AC8668D2C5C15C86"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D775F4BF7DFF4079AFA07B455E3E02D6"
             {
             "SourcePath" = "8:..\\..\\..\\..\\Desktop\\Knabench\\Tools\\rescmpAP4.exe"
@@ -2869,6 +2874,11 @@
             "AssemblyAsmDisplayName" = "8:System.Net.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
+                    "_EAE933C9223909A84E0B744B28935251"
+                    {
+                    "Name" = "8:System.Net.Http.dll"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:System.Net.Http.dll"
             "TargetName" = "8:"
@@ -3365,11 +3375,11 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:KWSNKnaBench"
         "ProductCode" = "8:{382401C2-28B3-4AEE-A629-7B1FC8BEF489}"
-        "PackageCode" = "8:{EF3DF913-6E4F-42C7-AE21-382B29D2471F}"
+        "PackageCode" = "8:{7FEED86A-C278-4995-84BC-07ED34A2D89F}"
         "UpgradeCode" = "8:{FED31FF1-2ADF-41D0-AD60-B5D54319C75E}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
-        "RemovePreviousVersions" = "11:FALSE"
+        "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
         "ProductVersion" = "8:1.0.8"
@@ -3382,7 +3392,7 @@
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:KWSNKnaBench"
         "ARPURLINFOABOUT" = "8:"
-        "ARPPRODUCTICON" = "8:_8CB4C40247FE40CDB2F28D8D7E503099"
+        "ARPPRODUCTICON" = "8:_D52A28B7A8B946DE9BC84512B028DFD5"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
@@ -3536,7 +3546,7 @@
             "Target" = "8:_EBC736EAD2B5401CB5970B96E889E173"
             "Folder" = "8:_DDCD908191334CF79382E0592B49B53C"
             "WorkingFolder" = "8:_BE2116F5C7274919AC8668D2C5C15C86"
-            "Icon" = "8:_8CB4C40247FE40CDB2F28D8D7E503099"
+            "Icon" = "8:_D52A28B7A8B946DE9BC84512B028DFD5"
             "Feature" = "8:"
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_141B0AADDA8344B0A8F74597B11425C6"
@@ -3550,7 +3560,7 @@
             "Target" = "8:_EBC736EAD2B5401CB5970B96E889E173"
             "Folder" = "8:_B92E5F6E6F024210905DEA092EB794E2"
             "WorkingFolder" = "8:_BE2116F5C7274919AC8668D2C5C15C86"
-            "Icon" = "8:_8CB4C40247FE40CDB2F28D8D7E503099"
+            "Icon" = "8:_D52A28B7A8B946DE9BC84512B028DFD5"
             "Feature" = "8:"
             }
         }
@@ -3954,7 +3964,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_DFA088F87CC14B1898AEE508FC503B5A"
             {
-            "SourcePath" = "8:..\\Release\\deviceQueryDrv.exe"
+            "SourcePath" = "8:..\\Debug\\deviceQueryDrv.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_BE2116F5C7274919AC8668D2C5C15C86"
@@ -3982,7 +3992,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_EBC736EAD2B5401CB5970B96E889E173"
             {
-            "SourcePath" = "8:..\\KWSNKnaBench\\obj\\Release\\KWSNKnaBench.exe"
+            "SourcePath" = "8:..\\KWSNKnaBench\\obj\\Debug\\KWSNKnaBench.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_BE2116F5C7274919AC8668D2C5C15C86"

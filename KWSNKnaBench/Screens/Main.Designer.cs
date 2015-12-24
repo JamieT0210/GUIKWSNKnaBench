@@ -120,8 +120,8 @@
             // newMonitorToolStripMenuItem
             // 
             this.newMonitorToolStripMenuItem.Name = "newMonitorToolStripMenuItem";
-            this.newMonitorToolStripMenuItem.Size = new System.Drawing.Size(127, 29);
-            this.newMonitorToolStripMenuItem.Text = "GPU Monitor";
+            this.newMonitorToolStripMenuItem.Size = new System.Drawing.Size(88, 29);
+            this.newMonitorToolStripMenuItem.Text = "Monitor";
             this.newMonitorToolStripMenuItem.Click += new System.EventHandler(this.newMonitorToolStripMenuItem_Click);
             // 
             // txtOutput
@@ -261,6 +261,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Main";
             this.helpProvider1.SetShowHelp(this, true);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Seti KnaBench";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
