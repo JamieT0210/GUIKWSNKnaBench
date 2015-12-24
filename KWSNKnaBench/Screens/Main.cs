@@ -35,9 +35,9 @@ namespace KWSNKnaBench
             Settings Check = new Settings();
             Check.Show();
         }
-        private void openMonitorToolStripMenuItem_Click(object sender, EventArgs e)
+        private void newMonitorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            KWSNKnaBench.Screens.GPUMonitor Check = new KWSNKnaBench.Screens.GPUMonitor();
+            KWSNKnaBench.Screens.newGPUMonitor Check = new KWSNKnaBench.Screens.newGPUMonitor();
             Check.Show();
         }
         //Launch Upload Sci Apps form

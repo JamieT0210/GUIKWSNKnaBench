@@ -36,9 +36,8 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openMonitorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newMonitorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtOutput = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnRunBench = new System.Windows.Forms.Button();
             this.btnEmail = new System.Windows.Forms.Button();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
@@ -47,13 +46,16 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.txtGpuDetails = new System.Windows.Forms.TextBox();
             this.btnGPUDetails = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.picAMD = new System.Windows.Forms.PictureBox();
+            this.picNvidia = new System.Windows.Forms.PictureBox();
+            this.picSeti = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAMD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picNvidia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSeti)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -61,7 +63,7 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.openMonitorToolStripMenuItem});
+            this.newMonitorToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(903, 33);
@@ -115,12 +117,12 @@
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
-            // openMonitorToolStripMenuItem
+            // newMonitorToolStripMenuItem
             // 
-            this.openMonitorToolStripMenuItem.Name = "openMonitorToolStripMenuItem";
-            this.openMonitorToolStripMenuItem.Size = new System.Drawing.Size(137, 29);
-            this.openMonitorToolStripMenuItem.Text = "Open Monitor";
-            this.openMonitorToolStripMenuItem.Click += new System.EventHandler(this.openMonitorToolStripMenuItem_Click);
+            this.newMonitorToolStripMenuItem.Name = "newMonitorToolStripMenuItem";
+            this.newMonitorToolStripMenuItem.Size = new System.Drawing.Size(127, 29);
+            this.newMonitorToolStripMenuItem.Text = "GPU Monitor";
+            this.newMonitorToolStripMenuItem.Click += new System.EventHandler(this.newMonitorToolStripMenuItem_Click);
             // 
             // txtOutput
             // 
@@ -131,18 +133,6 @@
             this.txtOutput.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtOutput.Size = new System.Drawing.Size(858, 320);
             this.txtOutput.TabIndex = 1;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(292, 51);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(318, 110);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
             // 
             // btnRunBench
             // 
@@ -220,15 +210,37 @@
             this.btnGPUDetails.UseVisualStyleBackColor = true;
             this.btnGPUDetails.Click += new System.EventHandler(this.btnGPUDetails_Click);
             // 
-            // pictureBox2
+            // picAMD
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(75, 51);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(119, 119);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox2.TabIndex = 7;
-            this.pictureBox2.TabStop = false;
+            this.picAMD.Image = global::KWSNKnaBench.Properties.Resources.AMD_Radeon_graphics_logo_2014_svg_2;
+            this.picAMD.Location = new System.Drawing.Point(704, 51);
+            this.picAMD.Name = "picAMD";
+            this.picAMD.Size = new System.Drawing.Size(119, 119);
+            this.picAMD.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picAMD.TabIndex = 8;
+            this.picAMD.TabStop = false;
+            // 
+            // picNvidia
+            // 
+            this.picNvidia.Image = ((System.Drawing.Image)(resources.GetObject("picNvidia.Image")));
+            this.picNvidia.Location = new System.Drawing.Point(23, 51);
+            this.picNvidia.Name = "picNvidia";
+            this.picNvidia.Size = new System.Drawing.Size(119, 119);
+            this.picNvidia.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picNvidia.TabIndex = 7;
+            this.picNvidia.TabStop = false;
+            // 
+            // picSeti
+            // 
+            this.picSeti.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.picSeti.Image = ((System.Drawing.Image)(resources.GetObject("picSeti.Image")));
+            this.picSeti.Location = new System.Drawing.Point(292, 51);
+            this.picSeti.Name = "picSeti";
+            this.picSeti.Size = new System.Drawing.Size(318, 110);
+            this.picSeti.TabIndex = 2;
+            this.picSeti.TabStop = false;
             // 
             // Main
             // 
@@ -236,12 +248,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(903, 628);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.picAMD);
+            this.Controls.Add(this.picNvidia);
             this.Controls.Add(this.btnGPUDetails);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.btnEmail);
             this.Controls.Add(this.btnRunBench);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.picSeti);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -251,13 +264,14 @@
             this.Text = "Seti KnaBench";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAMD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picNvidia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSeti)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -270,7 +284,7 @@
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.TextBox txtOutput;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picSeti;
         private System.Windows.Forms.Button btnRunBench;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.Button btnEmail;
@@ -282,8 +296,9 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TextBox txtGpuDetails;
         private System.Windows.Forms.Button btnGPUDetails;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.ToolStripMenuItem openMonitorToolStripMenuItem;
+        private System.Windows.Forms.PictureBox picNvidia;
+        private System.Windows.Forms.PictureBox picAMD;
+        private System.Windows.Forms.ToolStripMenuItem newMonitorToolStripMenuItem;
     }
 }
 

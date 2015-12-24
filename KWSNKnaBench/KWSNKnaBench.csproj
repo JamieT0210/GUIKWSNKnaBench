@@ -82,12 +82,6 @@
       <DependentUpon>About.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Crypto.cs" />
-    <Compile Include="Screens\GPUMonitor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Screens\GPUMonitor.Designer.cs">
-      <DependentUpon>GPUMonitor.cs</DependentUpon>
-    </Compile>
     <Compile Include="Screens\Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +90,12 @@
     </Compile>
     <Compile Include="Classes\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Screens\newGPUMonitor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\newGPUMonitor.Designer.cs">
+      <DependentUpon>newGPUMonitor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\SciAppUpload.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,9 +111,6 @@
     <EmbeddedResource Include="Screens\About.resx">
       <DependentUpon>About.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\GPUMonitor.resx">
-      <DependentUpon>GPUMonitor.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Screens\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -127,6 +124,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Screens\newGPUMonitor.resx">
+      <DependentUpon>newGPUMonitor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\SciAppUpload.resx">
       <DependentUpon>SciAppUpload.cs</DependentUpon>
     </EmbeddedResource>
@@ -164,6 +164,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo7.ico" />
+    <None Include="Resources\fan.jpg" />
+    <None Include="Resources\performance-clock-speed-512.png" />
+    <None Include="Resources\clock.jpg" />
+    <None Include="Resources\guage.png" />
+    <None Include="Resources\speedo.png" />
+    <None Include="Resources\thermometer.png" />
+    <None Include="Resources\AMD_Radeon_graphics_logo_2014.svg_2.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

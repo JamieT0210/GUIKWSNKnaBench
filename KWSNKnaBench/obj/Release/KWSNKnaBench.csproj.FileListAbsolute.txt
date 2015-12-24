@@ -24,3 +24,5 @@ D:\Jamie\Documents\GitHub\GUIKWSNKnaBench\KWSNKnaBench\obj\Release\KWSNKnaBench.
 D:\Jamie\Documents\GitHub\GUIKWSNKnaBench\KWSNKnaBench\obj\Release\KWSNKnaBench.csproj.GenerateResource.Cache
 D:\Jamie\Documents\GitHub\GUIKWSNKnaBench\KWSNKnaBench\obj\Release\KWSNKnaBench.exe
 D:\Jamie\Documents\GitHub\GUIKWSNKnaBench\KWSNKnaBench\obj\Release\KWSNKnaBench.pdb
+D:\Jamie\Documents\GitHub\GUIKWSNKnaBench\KWSNKnaBench\obj\Release\KWSNKnaBench.csprojResolveAssemblyReference.cache
+D:\Jamie\Documents\GitHub\GUIKWSNKnaBench\KWSNKnaBench\obj\Release\KWSNKnaBench.Screens.newGPUMonitor.resources
