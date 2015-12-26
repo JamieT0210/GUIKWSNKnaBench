@@ -30,13 +30,6 @@ namespace KWSNKnaBench
             Check.Show();
 
         }
-        private void newMonitorToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            KWSNKnaBench.Screens.newGPUMonitor Check = new KWSNKnaBench.Screens.newGPUMonitor();
-            Check.Show();
-            Check.DesktopLocation = new System.Drawing.Point(this.DesktopLocation.X + this.Width, this.DesktopLocation.Y);
-        }
-
         //Launch Upload Sci Apps form
         private void uploadNewAppsToolStripMenuItem_Click(object sender, EventArgs e)
         {

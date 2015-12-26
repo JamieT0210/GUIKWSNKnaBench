@@ -36,34 +36,29 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newMonitorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtOutput = new System.Windows.Forms.TextBox();
             this.btnRunBench = new System.Windows.Forms.Button();
             this.btnEmail = new System.Windows.Forms.Button();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabOutput = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.txtGpuDetails = new System.Windows.Forms.TextBox();
             this.btnGPUDetails = new System.Windows.Forms.Button();
-            this.picAMD = new System.Windows.Forms.PictureBox();
-            this.picNvidia = new System.Windows.Forms.PictureBox();
             this.picSeti = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
-            this.tabControl1.SuspendLayout();
+            this.tabOutput.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAMD)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picNvidia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSeti)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.newMonitorToolStripMenuItem});
+            this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(903, 33);
@@ -117,15 +112,10 @@
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
-            // newMonitorToolStripMenuItem
-            // 
-            this.newMonitorToolStripMenuItem.Name = "newMonitorToolStripMenuItem";
-            this.newMonitorToolStripMenuItem.Size = new System.Drawing.Size(88, 29);
-            this.newMonitorToolStripMenuItem.Text = "Monitor";
-            this.newMonitorToolStripMenuItem.Click += new System.EventHandler(this.newMonitorToolStripMenuItem_Click);
-            // 
             // txtOutput
             // 
+            this.txtOutput.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtOutput.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOutput.Location = new System.Drawing.Point(6, 0);
             this.txtOutput.Multiline = true;
             this.txtOutput.Name = "txtOutput";
@@ -136,9 +126,10 @@
             // 
             // btnRunBench
             // 
-            this.btnRunBench.Location = new System.Drawing.Point(285, 167);
+            this.btnRunBench.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRunBench.Location = new System.Drawing.Point(250, 167);
             this.btnRunBench.Name = "btnRunBench";
-            this.btnRunBench.Size = new System.Drawing.Size(107, 84);
+            this.btnRunBench.Size = new System.Drawing.Size(130, 84);
             this.btnRunBench.TabIndex = 3;
             this.btnRunBench.Text = "Run Benchmark";
             this.btnRunBench.UseVisualStyleBackColor = true;
@@ -146,9 +137,10 @@
             // 
             // btnEmail
             // 
-            this.btnEmail.Location = new System.Drawing.Point(398, 167);
+            this.btnEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEmail.Location = new System.Drawing.Point(386, 167);
             this.btnEmail.Name = "btnEmail";
-            this.btnEmail.Size = new System.Drawing.Size(107, 84);
+            this.btnEmail.Size = new System.Drawing.Size(130, 84);
             this.btnEmail.TabIndex = 4;
             this.btnEmail.Text = "E-mail Benchmark";
             this.btnEmail.UseVisualStyleBackColor = true;
@@ -158,15 +150,16 @@
             // 
             this.helpProvider1.HelpNamespace = "D:\\Jamie\\Documents\\HelpNDoc\\Output\\Build chm documentation\\Help.chm";
             // 
-            // tabControl1
+            // tabOutput
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(13, 257);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(878, 359);
-            this.tabControl1.TabIndex = 5;
+            this.tabOutput.Controls.Add(this.tabPage1);
+            this.tabOutput.Controls.Add(this.tabPage2);
+            this.tabOutput.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabOutput.Location = new System.Drawing.Point(13, 257);
+            this.tabOutput.Name = "tabOutput";
+            this.tabOutput.SelectedIndex = 0;
+            this.tabOutput.Size = new System.Drawing.Size(878, 359);
+            this.tabOutput.TabIndex = 5;
             // 
             // tabPage1
             // 
@@ -182,16 +175,18 @@
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.txtGpuDetails);
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Location = new System.Drawing.Point(4, 31);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(870, 326);
+            this.tabPage2.Size = new System.Drawing.Size(870, 324);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "GPU Details";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // txtGpuDetails
             // 
+            this.txtGpuDetails.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtGpuDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGpuDetails.Location = new System.Drawing.Point(7, 4);
             this.txtGpuDetails.Multiline = true;
             this.txtGpuDetails.Name = "txtGpuDetails";
@@ -202,33 +197,14 @@
             // 
             // btnGPUDetails
             // 
-            this.btnGPUDetails.Location = new System.Drawing.Point(511, 167);
+            this.btnGPUDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGPUDetails.Location = new System.Drawing.Point(522, 167);
             this.btnGPUDetails.Name = "btnGPUDetails";
-            this.btnGPUDetails.Size = new System.Drawing.Size(107, 84);
+            this.btnGPUDetails.Size = new System.Drawing.Size(130, 84);
             this.btnGPUDetails.TabIndex = 6;
             this.btnGPUDetails.Text = "Write GPU Details";
             this.btnGPUDetails.UseVisualStyleBackColor = true;
             this.btnGPUDetails.Click += new System.EventHandler(this.btnGPUDetails_Click);
-            // 
-            // picAMD
-            // 
-            this.picAMD.Image = global::KWSNKnaBench.Properties.Resources.AMD_Radeon_graphics_logo_2014_svg_2;
-            this.picAMD.Location = new System.Drawing.Point(704, 51);
-            this.picAMD.Name = "picAMD";
-            this.picAMD.Size = new System.Drawing.Size(119, 119);
-            this.picAMD.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.picAMD.TabIndex = 8;
-            this.picAMD.TabStop = false;
-            // 
-            // picNvidia
-            // 
-            this.picNvidia.Image = global::KWSNKnaBench.Properties.Resources.nvidia_icon;
-            this.picNvidia.Location = new System.Drawing.Point(23, 51);
-            this.picNvidia.Name = "picNvidia";
-            this.picNvidia.Size = new System.Drawing.Size(119, 119);
-            this.picNvidia.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.picNvidia.TabIndex = 7;
-            this.picNvidia.TabStop = false;
             // 
             // picSeti
             // 
@@ -248,10 +224,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(903, 628);
-            this.Controls.Add(this.picAMD);
-            this.Controls.Add(this.picNvidia);
             this.Controls.Add(this.btnGPUDetails);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tabOutput);
             this.Controls.Add(this.btnEmail);
             this.Controls.Add(this.btnRunBench);
             this.Controls.Add(this.picSeti);
@@ -265,13 +239,11 @@
             this.Text = "Seti KnaBench";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
+            this.tabOutput.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAMD)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picNvidia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSeti)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -292,14 +264,11 @@
         private System.Windows.Forms.ToolStripMenuItem uploadNewAppsToolStripMenuItem;
         private System.Windows.Forms.HelpProvider helpProvider1;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tabOutput;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TextBox txtGpuDetails;
         private System.Windows.Forms.Button btnGPUDetails;
-        private System.Windows.Forms.PictureBox picNvidia;
-        private System.Windows.Forms.PictureBox picAMD;
-        private System.Windows.Forms.ToolStripMenuItem newMonitorToolStripMenuItem;
     }
 }
 

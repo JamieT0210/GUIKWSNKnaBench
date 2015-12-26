@@ -19,7 +19,6 @@ D:\Jamie\Documents\GitHub\GUIKWSNKnaBench\KWSNKnaBench\bin\Debug\OpenHardwareMon
 D:\Jamie\Documents\GitHub\GUIKWSNKnaBench\KWSNKnaBench\obj\Debug\KWSNKnaBench.About.resources
 D:\Jamie\Documents\GitHub\GUIKWSNKnaBench\KWSNKnaBench\obj\Debug\KWSNKnaBench.Main.resources
 D:\Jamie\Documents\GitHub\GUIKWSNKnaBench\KWSNKnaBench\obj\Debug\KWSNKnaBench.Properties.Resources.resources
-D:\Jamie\Documents\GitHub\GUIKWSNKnaBench\KWSNKnaBench\obj\Debug\KWSNKnaBench.Screens.newGPUMonitor.resources
 D:\Jamie\Documents\GitHub\GUIKWSNKnaBench\KWSNKnaBench\obj\Debug\KWSNKnaBench.SciAppUpload.resources
 D:\Jamie\Documents\GitHub\GUIKWSNKnaBench\KWSNKnaBench\obj\Debug\KWSNKnaBench.Settings.resources
 D:\Jamie\Documents\GitHub\GUIKWSNKnaBench\KWSNKnaBench\obj\Debug\KWSNKnaBench.csproj.GenerateResource.Cache
