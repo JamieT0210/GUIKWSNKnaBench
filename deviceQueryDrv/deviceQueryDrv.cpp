@@ -15,6 +15,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <windows.h>
+#include <iostream>
 
 #include <cuda.h>
 #include <helper_cuda_drvapi.h>
@@ -31,19 +33,31 @@ main(int argc, char **argv)
 	int deviceCount = 0;
 	char deviceName[256];
 
+
+	HINSTANCE hGetProcIDDLL = LoadLibrary("nvcuda.dll");
+	if (!hGetProcIDDLL) {
+		printf("No Cuda capable Devices or Cuda Capable Drivers found\n");
+		return EXIT_FAILURE;
+	}
+	else printf("nvcuda.dll loaded OK!\n");
+	FreeLibrary(hGetProcIDDLL);
+
 	//    printf("%s Starting...\n\n", argv[0]);
 
 	// note your project will need to link with cuda.lib files on windows
 	printf("CUDA Device Query (Driver API) statically linked version \n");
 
-	CUresult error_id = cuInit(0);
 
-	if (error_id != CUDA_SUCCESS)
-	{
-		printf("cuInit(0) returned %d\n-> %s\n", error_id, getCudaDrvErrorString(error_id));
-		printf("Result = FAIL\n");
-		exit(EXIT_FAILURE);
-	}
+		CUresult error_id = cuInit(0);
+
+
+			if (error_id != CUDA_SUCCESS)
+			{
+				printf("cuInit(0) returned %d\n-> %s\n", error_id, getCudaDrvErrorString(error_id));
+				printf("Result = FAIL\n");
+				exit(EXIT_FAILURE);
+			}
+
 
 	error_id = cuDeviceGetCount(&deviceCount);
 

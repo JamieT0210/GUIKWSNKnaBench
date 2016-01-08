@@ -85,6 +85,7 @@
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+      <DelayLoadDLLs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">nvcuda.dll;%(DelayLoadDLLs)</DelayLoadDLLs>
     </Link>
     <CudaCompile>
       <Runtime>MTd</Runtime>
@@ -102,6 +103,7 @@
     <Link>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <DelayLoadDLLs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">nvcuda.dll;%(DelayLoadDLLs)</DelayLoadDLLs>
     </Link>
     <CudaCompile>
       <Runtime>MT</Runtime>
