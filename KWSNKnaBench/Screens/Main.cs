@@ -95,10 +95,10 @@ namespace KWSNKnaBench
             {
                 MessageBox.Show("No location for Benchmark folders found - check settings", "Select Benchmark Folder", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            //If MBBench214cmd can't be found in the supplier location then display an error
-            if (!File.Exists(benchLoc + @"\Knabench\MBbench214.cmd"))
+            //If MBBench215cmd can't be found in the supplier location then display an error
+            if (!File.Exists(benchLoc + @"\Knabench\MBbench215.cmd"))
             {
-                MessageBox.Show("MBBench214.cmd can not be found - check settings", "Select Benchmark Folder", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("MBBench215.cmd can not be found - check settings", "Select Benchmark Folder", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             //Otherwise try to run the bench
             else {
