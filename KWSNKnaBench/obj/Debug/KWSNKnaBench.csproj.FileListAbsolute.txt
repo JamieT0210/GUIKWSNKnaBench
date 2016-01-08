@@ -24,3 +24,4 @@ D:\Jamie\Documents\GitHub\GUIKWSNKnaBench\KWSNKnaBench\obj\Debug\KWSNKnaBench.Se
 D:\Jamie\Documents\GitHub\GUIKWSNKnaBench\KWSNKnaBench\obj\Debug\KWSNKnaBench.csproj.GenerateResource.Cache
 D:\Jamie\Documents\GitHub\GUIKWSNKnaBench\KWSNKnaBench\obj\Debug\KWSNKnaBench.exe
 D:\Jamie\Documents\GitHub\GUIKWSNKnaBench\KWSNKnaBench\obj\Debug\KWSNKnaBench.pdb
+D:\Jamie\Documents\GitHub\GUIKWSNKnaBench\KWSNKnaBench\obj\Debug\KWSNKnaBench.csprojResolveAssemblyReference.cache

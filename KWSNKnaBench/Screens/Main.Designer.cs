@@ -46,6 +46,9 @@
             this.txtGpuDetails = new System.Windows.Forms.TextBox();
             this.btnGPUDetails = new System.Windows.Forms.Button();
             this.picSeti = new System.Windows.Forms.PictureBox();
+            this.rdoSuspendBoinc = new System.Windows.Forms.RadioButton();
+            this.rdoSuspendCPU = new System.Windows.Forms.RadioButton();
+            this.rdoSuspendGPU = new System.Windows.Forms.RadioButton();
             this.menuStrip1.SuspendLayout();
             this.tabOutput.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -127,7 +130,7 @@
             // btnRunBench
             // 
             this.btnRunBench.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRunBench.Location = new System.Drawing.Point(250, 167);
+            this.btnRunBench.Location = new System.Drawing.Point(250, 260);
             this.btnRunBench.Name = "btnRunBench";
             this.btnRunBench.Size = new System.Drawing.Size(130, 84);
             this.btnRunBench.TabIndex = 3;
@@ -138,7 +141,7 @@
             // btnEmail
             // 
             this.btnEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEmail.Location = new System.Drawing.Point(386, 167);
+            this.btnEmail.Location = new System.Drawing.Point(386, 260);
             this.btnEmail.Name = "btnEmail";
             this.btnEmail.Size = new System.Drawing.Size(130, 84);
             this.btnEmail.TabIndex = 4;
@@ -155,7 +158,7 @@
             this.tabOutput.Controls.Add(this.tabPage1);
             this.tabOutput.Controls.Add(this.tabPage2);
             this.tabOutput.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabOutput.Location = new System.Drawing.Point(13, 257);
+            this.tabOutput.Location = new System.Drawing.Point(13, 350);
             this.tabOutput.Name = "tabOutput";
             this.tabOutput.SelectedIndex = 0;
             this.tabOutput.Size = new System.Drawing.Size(878, 359);
@@ -164,10 +167,10 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.txtOutput);
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Location = new System.Drawing.Point(4, 31);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(870, 326);
+            this.tabPage1.Size = new System.Drawing.Size(870, 324);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Benchmark Output";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -198,7 +201,7 @@
             // btnGPUDetails
             // 
             this.btnGPUDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGPUDetails.Location = new System.Drawing.Point(522, 167);
+            this.btnGPUDetails.Location = new System.Drawing.Point(522, 260);
             this.btnGPUDetails.Name = "btnGPUDetails";
             this.btnGPUDetails.Size = new System.Drawing.Size(130, 84);
             this.btnGPUDetails.TabIndex = 6;
@@ -214,16 +217,52 @@
             this.picSeti.Image = ((System.Drawing.Image)(resources.GetObject("picSeti.Image")));
             this.picSeti.Location = new System.Drawing.Point(292, 51);
             this.picSeti.Name = "picSeti";
-            this.picSeti.Size = new System.Drawing.Size(318, 110);
+            this.picSeti.Size = new System.Drawing.Size(318, 114);
             this.picSeti.TabIndex = 2;
             this.picSeti.TabStop = false;
+            // 
+            // rdoSuspendBoinc
+            // 
+            this.rdoSuspendBoinc.AutoSize = true;
+            this.rdoSuspendBoinc.Location = new System.Drawing.Point(94, 201);
+            this.rdoSuspendBoinc.Name = "rdoSuspendBoinc";
+            this.rdoSuspendBoinc.Size = new System.Drawing.Size(231, 24);
+            this.rdoSuspendBoinc.TabIndex = 7;
+            this.rdoSuspendBoinc.TabStop = true;
+            this.rdoSuspendBoinc.Text = "Suspend ALL BOINC Tasks";
+            this.rdoSuspendBoinc.UseVisualStyleBackColor = true;
+            // 
+            // rdoSuspendCPU
+            // 
+            this.rdoSuspendCPU.AutoSize = true;
+            this.rdoSuspendCPU.Location = new System.Drawing.Point(331, 201);
+            this.rdoSuspendCPU.Name = "rdoSuspendCPU";
+            this.rdoSuspendCPU.Size = new System.Drawing.Size(235, 24);
+            this.rdoSuspendCPU.TabIndex = 8;
+            this.rdoSuspendCPU.TabStop = true;
+            this.rdoSuspendCPU.Text = "Suspend CPU BOINC Tasks";
+            this.rdoSuspendCPU.UseVisualStyleBackColor = true;
+            // 
+            // rdoSuspendGPU
+            // 
+            this.rdoSuspendGPU.AutoSize = true;
+            this.rdoSuspendGPU.Location = new System.Drawing.Point(572, 201);
+            this.rdoSuspendGPU.Name = "rdoSuspendGPU";
+            this.rdoSuspendGPU.Size = new System.Drawing.Size(237, 24);
+            this.rdoSuspendGPU.TabIndex = 9;
+            this.rdoSuspendGPU.TabStop = true;
+            this.rdoSuspendGPU.Text = "Suspend GPU BOINC Tasks";
+            this.rdoSuspendGPU.UseVisualStyleBackColor = true;
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(903, 628);
+            this.ClientSize = new System.Drawing.Size(903, 723);
+            this.Controls.Add(this.rdoSuspendGPU);
+            this.Controls.Add(this.rdoSuspendCPU);
+            this.Controls.Add(this.rdoSuspendBoinc);
             this.Controls.Add(this.btnGPUDetails);
             this.Controls.Add(this.tabOutput);
             this.Controls.Add(this.btnEmail);
@@ -269,6 +308,9 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TextBox txtGpuDetails;
         private System.Windows.Forms.Button btnGPUDetails;
+        private System.Windows.Forms.RadioButton rdoSuspendBoinc;
+        private System.Windows.Forms.RadioButton rdoSuspendCPU;
+        private System.Windows.Forms.RadioButton rdoSuspendGPU;
     }
 }
 

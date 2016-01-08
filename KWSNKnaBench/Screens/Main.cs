@@ -18,6 +18,8 @@ namespace KWSNKnaBench
         private string emailPort = null; //Port the above server uses
         private string emailUser = null; //E-mail address of user
         private string emailPass = null; //Users e-mail password
+        private string boincInstall = null; //Boinc install location
+        private bool boincSuspend = true; //Flag set if the bench app has suspended boinc
 
         public Main()
         {
@@ -55,6 +57,9 @@ namespace KWSNKnaBench
         {
             Help.ShowHelp(this, @"./Resources/help.chm");
         }
+
+
+
         //Launch the benchmark 
         private void btnRunBench_Click(object sender, EventArgs e)
         {
@@ -72,6 +77,19 @@ namespace KWSNKnaBench
 
                 }
             }
+            //Get the install location of Boinc for some reason Bopinc always writes to the 32bit Software key even on 64bit machines and installs.....
+            RegistryKey key2 = Registry.LocalMachine.OpenSubKey("Software", true);
+            key2 = key2.OpenSubKey("Space Sciences Laboratory, U.C. Berkeley", true);
+            key2 = key2.OpenSubKey("BOINC Setup", true);
+            if (key2 != null)
+            {
+                object p = key2.GetValue("INSTALLDIR");
+                if ( p != null)
+                {
+                    boincInstall = (p.ToString());
+                }
+            }
+
             if ((string.IsNullOrEmpty(benchLoc)))
             //if nothing has been passed to the var then show error
             {
@@ -112,13 +130,74 @@ namespace KWSNKnaBench
                         MessageBox.Show("Unable to move old benchmark files: {0} " + c.ToString(), "Unable to Move Archive Files", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
+                //Check for any suspend files left over from last bench and delete if they do
+                if (File.Exists(benchLoc + @"\Knabench\Suspend.cmd"))
+                {
+                    File.Delete(benchLoc + @"\Knabench\Suspend.cmd");
+                }
+                if (File.Exists(benchLoc + @"\Knabench\Suspend2.cmd"))
+                {
+                    File.Delete(benchLoc + @"\Knabench\Suspend2.cmd");
+                }
+                if (File.Exists(benchLoc + @"\Knabench\Resume.cmd"))
+                {
+                    File.Delete(benchLoc + @"\Knabench\Resume.cmd");
+                }
+                if (File.Exists(benchLoc + @"\Knabench\Resume2.cmd"))
+                {
+                    File.Delete(benchLoc + @"\Knabench\Resume2.cmd");
+                }
+                //Dependant on what the user has selected suspend only CPU tasks.....
+                if (rdoSuspendCPU.Checked)
+                {
+                    boincSuspend = true;
+                    System.IO.File.WriteAllText(benchLoc + @"\Knabench\Suspend.cmd", @"""" + boincInstall + "boinccmd" + @"""" + " --set_run_mode never 172800");
+                    System.Diagnostics.Process process = new System.Diagnostics.Process();
+                    process.StartInfo.WorkingDirectory = benchLoc + @"\Knabench";
+                    process.StartInfo.UseShellExecute = false;
+                    process.StartInfo.FileName = benchLoc + @"\Knabench\Suspend.cmd";
+                    process.StartInfo.CreateNoWindow = true;
+                    process.Start();
+                }
+                //or suspend only GPU tasks.....
+                if (rdoSuspendGPU.Checked)
+                {
+                    boincSuspend = true;
+                    System.IO.File.WriteAllText(benchLoc + @"\Knabench\Suspend.cmd", @"""" + boincInstall + "boinccmd" + @"""" + " --set_gpu_mode never 172800");
+                    System.Diagnostics.Process process = new System.Diagnostics.Process();
+                    process.StartInfo.WorkingDirectory = benchLoc + @"\Knabench";
+                    process.StartInfo.UseShellExecute = false;
+                    process.StartInfo.FileName = benchLoc + @"\Knabench\Suspend.cmd";
+                    process.StartInfo.CreateNoWindow = true;
+                    process.Start();
+                }
+                //or suspend all tasks.....
+                if (rdoSuspendBoinc.Checked)
+                {
+                    boincSuspend = true;
+                    System.IO.File.WriteAllText(benchLoc + @"\Knabench\Suspend.cmd", @"""" + boincInstall + "boinccmd" + @"""" + " --set_gpu_mode never 172800");
+                    System.IO.File.WriteAllText(benchLoc + @"\Knabench\Suspend2.cmd", @"""" + boincInstall + "boinccmd" + @"""" + " --set_run_mode never 172800");
+                    System.Diagnostics.Process process = new System.Diagnostics.Process();
+                    process.StartInfo.WorkingDirectory = benchLoc + @"\Knabench";
+                    process.StartInfo.UseShellExecute = false;
+                    process.StartInfo.FileName = benchLoc + @"\Knabench\Suspend.cmd";
+                    process.StartInfo.CreateNoWindow = true;
+                    process.Start();
+                    System.Diagnostics.Process process2 = new System.Diagnostics.Process();
+                    process2.StartInfo.WorkingDirectory = benchLoc + @"\Knabench";
+                    process2.StartInfo.UseShellExecute = false;
+                    process2.StartInfo.FileName = benchLoc + @"\Knabench\Suspend2.cmd";
+                    process2.StartInfo.CreateNoWindow = true;
+                    process2.Start();
+                }
+
                 try
                 {
                     //Start the benchmark and redirect the output from the mbbench.cmd from a console window to the app hiding the console
                     System.Diagnostics.Process process = new System.Diagnostics.Process();
                     process.StartInfo.WorkingDirectory = benchLoc + @"\Knabench";
                     process.StartInfo.UseShellExecute = false;
-                    process.StartInfo.FileName = benchLoc + @"\Knabench\MBbench214.cmd";
+                    process.StartInfo.FileName = benchLoc + @"\Knabench\MBbench215.cmd";
                     process.StartInfo.CreateNoWindow = true;
                     process.StartInfo.RedirectStandardInput = true;
                     process.StartInfo.RedirectStandardOutput = true;
@@ -156,6 +235,24 @@ namespace KWSNKnaBench
             }
 
             proc.Close();
+
+            if (boincSuspend == true)
+            {
+                System.IO.File.WriteAllText(benchLoc + @"\Knabench\Resume.cmd", @"""" + boincInstall + "boinccmd" + @"""" + " --set_gpu_mode never 1");
+                System.IO.File.WriteAllText(benchLoc + @"\Knabench\Resume2.cmd", @"""" + boincInstall + "boinccmd" + @"""" + " --set_run_mode never 1");
+                System.Diagnostics.Process process = new System.Diagnostics.Process();
+                process.StartInfo.WorkingDirectory = benchLoc + @"\Knabench";
+                process.StartInfo.UseShellExecute = false;
+                process.StartInfo.FileName = benchLoc + @"\Knabench\Resume.cmd";
+                process.StartInfo.CreateNoWindow = true;
+                process.Start();
+                System.Diagnostics.Process process2 = new System.Diagnostics.Process();
+                process2.StartInfo.WorkingDirectory = benchLoc + @"\Knabench";
+                process2.StartInfo.UseShellExecute = false;
+                process2.StartInfo.FileName = benchLoc + @"\Knabench\Resume2.cmd";
+                process2.StartInfo.CreateNoWindow = true;
+                process2.Start();
+            }
         }
         //Write the line to the output window line by line
         void proc_DataReceived(object sender, DataReceivedEventArgs e)
