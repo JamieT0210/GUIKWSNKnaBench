@@ -85,7 +85,15 @@
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
-      <DelayLoadDLLs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">nvcuda.dll;%(DelayLoadDLLs)</DelayLoadDLLs>
+      <DelayLoadDLLs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </DelayLoadDLLs>
+      <SupportNobindOfDelayLoadedDLL Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </SupportNobindOfDelayLoadedDLL>
+      <RegisterOutput Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</RegisterOutput>
+      <AddModuleNamesToAssembly Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </AddModuleNamesToAssembly>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </AdditionalOptions>
     </Link>
     <CudaCompile>
       <Runtime>MTd</Runtime>
@@ -103,7 +111,15 @@
     <Link>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
-      <DelayLoadDLLs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">nvcuda.dll;%(DelayLoadDLLs)</DelayLoadDLLs>
+      <DelayLoadDLLs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </DelayLoadDLLs>
+      <SupportNobindOfDelayLoadedDLL Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </SupportNobindOfDelayLoadedDLL>
+      <RegisterOutput Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</RegisterOutput>
+      <AddModuleNamesToAssembly Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </AddModuleNamesToAssembly>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </AdditionalOptions>
     </Link>
     <CudaCompile>
       <Runtime>MT</Runtime>
@@ -112,6 +128,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="deviceQueryDrv.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

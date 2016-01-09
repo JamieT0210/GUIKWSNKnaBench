@@ -43,6 +43,22 @@ namespace KWSNKnaBench
         {
             if (MessageBox.Show("Are you sure you want to Exit?", "Quit KnaBench", MessageBoxButtons.OKCancel, MessageBoxIcon.Stop) == DialogResult.OK)
             {
+                if (File.Exists(benchLoc + @"\Knabench\Suspend.cmd"))
+                {
+                    File.Delete(benchLoc + @"\Knabench\Suspend.cmd");
+                }
+                if (File.Exists(benchLoc + @"\Knabench\Suspend2.cmd"))
+                {
+                    File.Delete(benchLoc + @"\Knabench\Suspend2.cmd");
+                }
+                if (File.Exists(benchLoc + @"\Knabench\Resume.cmd"))
+                {
+                    File.Delete(benchLoc + @"\Knabench\Resume.cmd");
+                }
+                if (File.Exists(benchLoc + @"\Knabench\Resume2.cmd"))
+                {
+                    File.Delete(benchLoc + @"\Knabench\Resume2.cmd");
+                }
                 Application.Exit();
             }
         }
@@ -63,6 +79,7 @@ namespace KWSNKnaBench
         //Launch the benchmark 
         private void btnRunBench_Click(object sender, EventArgs e)
         {
+            txtOutput.Clear();
             RegistryKey key = Registry.CurrentUser.OpenSubKey("Software", true);
             key = key.OpenSubKey("Jamie", true);
             key = key.OpenSubKey("KWSNKnaBench", true);
@@ -84,12 +101,11 @@ namespace KWSNKnaBench
             if (key2 != null)
             {
                 object p = key2.GetValue("INSTALLDIR");
-                if ( p != null)
+                if (p != null)
                 {
                     boincInstall = (p.ToString());
                 }
             }
-
             if ((string.IsNullOrEmpty(benchLoc)))
             //if nothing has been passed to the var then show error
             {
@@ -101,7 +117,8 @@ namespace KWSNKnaBench
                 MessageBox.Show("MBBench215.cmd can not be found - check settings", "Select Benchmark Folder", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             //Otherwise try to run the bench
-            else {
+            else
+            {
                 try
                 {
                     //Check to see if an Archive folder exists in Testdatas folder if not create it
@@ -152,6 +169,7 @@ namespace KWSNKnaBench
                 {
                     boincSuspend = true;
                     System.IO.File.WriteAllText(benchLoc + @"\Knabench\Suspend.cmd", @"""" + boincInstall + "boinccmd" + @"""" + " --set_run_mode never 172800");
+                    System.IO.File.WriteAllText(benchLoc + @"\Knabench\Resume.cmd", @"""" + boincInstall + "boinccmd" + @"""" + " --set_run_mode never 1");
                     System.Diagnostics.Process process = new System.Diagnostics.Process();
                     process.StartInfo.WorkingDirectory = benchLoc + @"\Knabench";
                     process.StartInfo.UseShellExecute = false;
@@ -164,6 +182,7 @@ namespace KWSNKnaBench
                 {
                     boincSuspend = true;
                     System.IO.File.WriteAllText(benchLoc + @"\Knabench\Suspend.cmd", @"""" + boincInstall + "boinccmd" + @"""" + " --set_gpu_mode never 172800");
+                    System.IO.File.WriteAllText(benchLoc + @"\Knabench\Resume2.cmd", @"""" + boincInstall + "boinccmd" + @"""" + " --set_gpu_mode never 1");
                     System.Diagnostics.Process process = new System.Diagnostics.Process();
                     process.StartInfo.WorkingDirectory = benchLoc + @"\Knabench";
                     process.StartInfo.UseShellExecute = false;
@@ -177,6 +196,8 @@ namespace KWSNKnaBench
                     boincSuspend = true;
                     System.IO.File.WriteAllText(benchLoc + @"\Knabench\Suspend.cmd", @"""" + boincInstall + "boinccmd" + @"""" + " --set_gpu_mode never 172800");
                     System.IO.File.WriteAllText(benchLoc + @"\Knabench\Suspend2.cmd", @"""" + boincInstall + "boinccmd" + @"""" + " --set_run_mode never 172800");
+                    System.IO.File.WriteAllText(benchLoc + @"\Knabench\Resume2.cmd", @"""" + boincInstall + "boinccmd" + @"""" + " --set_gpu_mode never 1");
+                    System.IO.File.WriteAllText(benchLoc + @"\Knabench\Resume.cmd", @"""" + boincInstall + "boinccmd" + @"""" + " --set_run_mode never 1");
                     System.Diagnostics.Process process = new System.Diagnostics.Process();
                     process.StartInfo.WorkingDirectory = benchLoc + @"\Knabench";
                     process.StartInfo.UseShellExecute = false;
@@ -229,30 +250,14 @@ namespace KWSNKnaBench
             if (proc.ExitCode == 0)
             {
                 this.txtOutput.AppendText("Success." + Environment.NewLine);
+
             }
-            else {
+            else
+            {
                 this.txtOutput.AppendText("Failed." + Environment.NewLine);
             }
 
             proc.Close();
-
-            if (boincSuspend == true)
-            {
-                System.IO.File.WriteAllText(benchLoc + @"\Knabench\Resume.cmd", @"""" + boincInstall + "boinccmd" + @"""" + " --set_gpu_mode never 1");
-                System.IO.File.WriteAllText(benchLoc + @"\Knabench\Resume2.cmd", @"""" + boincInstall + "boinccmd" + @"""" + " --set_run_mode never 1");
-                System.Diagnostics.Process process = new System.Diagnostics.Process();
-                process.StartInfo.WorkingDirectory = benchLoc + @"\Knabench";
-                process.StartInfo.UseShellExecute = false;
-                process.StartInfo.FileName = benchLoc + @"\Knabench\Resume.cmd";
-                process.StartInfo.CreateNoWindow = true;
-                process.Start();
-                System.Diagnostics.Process process2 = new System.Diagnostics.Process();
-                process2.StartInfo.WorkingDirectory = benchLoc + @"\Knabench";
-                process2.StartInfo.UseShellExecute = false;
-                process2.StartInfo.FileName = benchLoc + @"\Knabench\Resume2.cmd";
-                process2.StartInfo.CreateNoWindow = true;
-                process2.Start();
-            }
         }
         //Write the line to the output window line by line
         void proc_DataReceived(object sender, DataReceivedEventArgs e)
@@ -274,7 +279,8 @@ namespace KWSNKnaBench
                     text
                 });
             }
-            else {
+            else
+            {
                 this.txtOutput.AppendText(text);
             }
         }
@@ -313,7 +319,8 @@ namespace KWSNKnaBench
                     {
                         emailPass = "";
                     }
-                    else {
+                    else
+                    {
                         emailPass = Crypto.Decrypt(SMTPPassword, "A7A338B93D5E3EE1C58789EE68FAB");
                     }
                     int ConvertEmailPort = 0;
@@ -385,7 +392,7 @@ namespace KWSNKnaBench
             }
         }
 
-      private void ProcExited2(object sender, System.EventArgs e)
+        private void ProcExited2(object sender, System.EventArgs e)
         {
             Process proc = (Process)sender;
 
@@ -397,7 +404,8 @@ namespace KWSNKnaBench
             {
                 this.txtGpuDetails.AppendText("Success." + Environment.NewLine);
             }
-            else {
+            else
+            {
                 this.txtGpuDetails.AppendText("Failed." + Environment.NewLine);
             }
 
@@ -422,7 +430,8 @@ namespace KWSNKnaBench
                     text
                 });
             }
-            else {
+            else
+            {
                 this.txtGpuDetails.AppendText(text);
                 using (StreamWriter sw2 = new StreamWriter(benchLoc + @"\Knabench\Testdatas\GPUDetails.txt"))
                 {

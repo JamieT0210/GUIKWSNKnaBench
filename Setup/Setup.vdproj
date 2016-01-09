@@ -87,7 +87,19 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_1C60FFCD0AFD420A853CB7B97F9B7994"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_1D4AF5E7B20447F9BF11BBF81FFF01D0"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_202903AA839E44C498FCE55D80AB6B20"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -177,13 +189,25 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_438E3E976E174BACBAC23B7D9EE01D89"
+        "MsmKey" = "8:_3E2A3309ECC74F76B6EF092A851114D6"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_46B1298C4DAC47B7BC971775B7A6E946"
+        "MsmKey" = "8:_3EECBF0F6BB14FBDAB6FAC63F74977C1"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_434A00DAA3DA4BCB89778D15638A5E41"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_438E3E976E174BACBAC23B7D9EE01D89"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -333,12 +357,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_87D296AD2442470F9C9A7BD2DF3E027A"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_887752722E174B7AA411AC69C6623AEE"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -351,12 +369,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_8D20670F8E774F1E87ECF7E85FDFB2A4"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_8EEE1E5B125445EFA859E317654D3E95"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -364,12 +376,6 @@
         "Entry"
         {
         "MsmKey" = "8:_8F60100C88AF482C93F873F99B5FD06D"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_90A1058496474165B45E9E2D3A55A856"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -429,18 +435,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_AE4F5B725B1A4DB4854139CF3B8B7333"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_B350D609364748CBAED6A86EA48B5DC0"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_B51244CDCD1D44A4A1421115FCFA495D"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -478,6 +472,12 @@
         "Entry"
         {
         "MsmKey" = "8:_BA3ED0854D7146ACADEEA474262EBAAF"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_BB7C75BC3F1E4133BDFF5251682DCD98"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1056,12 +1056,52 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1C60FFCD0AFD420A853CB7B97F9B7994"
+            {
+            "SourcePath" = "8:..\\..\\..\\..\\Desktop\\Knabench\\TestWUs\\PG0444_v8.wu"
+            "TargetName" = "8:PG0444_v8.wu"
+            "Tag" = "8:"
+            "Folder" = "8:_4F9EBE15FAF14782BA7007513B140A8A"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1D4AF5E7B20447F9BF11BBF81FFF01D0"
             {
             "SourcePath" = "8:..\\..\\..\\..\\Desktop\\Knabench\\Tools\\recmpv2\\result_default515.sah"
             "TargetName" = "8:result_default515.sah"
             "Tag" = "8:"
             "Folder" = "8:_A8FDF36173324D01B1E0B19CFA6B3377"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_202903AA839E44C498FCE55D80AB6B20"
+            {
+            "SourcePath" = "8:..\\..\\..\\..\\Desktop\\Knabench\\Science_apps\\Reference\\setiathome_8.04_windows_intelx86.exe"
+            "TargetName" = "8:setiathome_8.04_windows_intelx86.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_BC510EF8B4774795858B6097B1EE8B20"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -1356,12 +1396,12 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_438E3E976E174BACBAC23B7D9EE01D89"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_3E2A3309ECC74F76B6EF092A851114D6"
             {
-            "SourcePath" = "8:..\\..\\..\\..\\Desktop\\Knabench\\appargs.txt"
-            "TargetName" = "8:appargs.txt"
+            "SourcePath" = "8:..\\..\\..\\..\\Desktop\\Knabench\\TestWUs\\PG0395_v8.wu"
+            "TargetName" = "8:PG0395_v8.wu"
             "Tag" = "8:"
-            "Folder" = "8:_EED54D3C1A774D07B38AE579ADCBFEF8"
+            "Folder" = "8:_4F9EBE15FAF14782BA7007513B140A8A"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -1376,12 +1416,52 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_46B1298C4DAC47B7BC971775B7A6E946"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_3EECBF0F6BB14FBDAB6FAC63F74977C1"
             {
-            "SourcePath" = "8:..\\..\\..\\..\\Desktop\\Knabench\\TestWUs\\PG1327_v7.wu"
-            "TargetName" = "8:PG1327_v7.wu"
+            "SourcePath" = "8:..\\..\\..\\..\\Desktop\\Knabench\\TestWUs\\PG0009_v8.wu"
+            "TargetName" = "8:PG0009_v8.wu"
             "Tag" = "8:"
             "Folder" = "8:_4F9EBE15FAF14782BA7007513B140A8A"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_434A00DAA3DA4BCB89778D15638A5E41"
+            {
+            "SourcePath" = "8:..\\..\\..\\..\\Desktop\\Knabench\\TestWUs\\PG1327_v8.wu"
+            "TargetName" = "8:PG1327_v8.wu"
+            "Tag" = "8:"
+            "Folder" = "8:_4F9EBE15FAF14782BA7007513B140A8A"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_438E3E976E174BACBAC23B7D9EE01D89"
+            {
+            "SourcePath" = "8:..\\..\\..\\..\\Desktop\\Knabench\\appargs.txt"
+            "TargetName" = "8:appargs.txt"
+            "Tag" = "8:"
+            "Folder" = "8:_EED54D3C1A774D07B38AE579ADCBFEF8"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -1887,26 +1967,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_87D296AD2442470F9C9A7BD2DF3E027A"
-            {
-            "SourcePath" = "8:..\\..\\..\\..\\Desktop\\Knabench\\TestWUs\\PG0009_v7.wu"
-            "TargetName" = "8:PG0009_v7.wu"
-            "Tag" = "8:"
-            "Folder" = "8:_4F9EBE15FAF14782BA7007513B140A8A"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_887752722E174B7AA411AC69C6623AEE"
             {
             "SourcePath" = "8:..\\..\\..\\..\\Desktop\\Knabench\\Testdatas\\time.tmp"
@@ -1947,26 +2007,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8D20670F8E774F1E87ECF7E85FDFB2A4"
-            {
-            "SourcePath" = "8:..\\..\\..\\..\\Desktop\\Knabench\\Science_apps\\Reference\\setiathome_7.00_windows_intelx86.exe"
-            "TargetName" = "8:setiathome_7.00_windows_intelx86.exe"
-            "Tag" = "8:"
-            "Folder" = "8:_BC510EF8B4774795858B6097B1EE8B20"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8EEE1E5B125445EFA859E317654D3E95"
             {
             "SourcePath" = "8:..\\..\\..\\..\\Desktop\\Knabench\\Tools\\rescmp\\main.cpp"
@@ -1993,26 +2033,6 @@
             "TargetName" = "8:sah_result.h"
             "Tag" = "8:"
             "Folder" = "8:_88D20D4ADB294920AD7A597A9F6BB888"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_90A1058496474165B45E9E2D3A55A856"
-            {
-            "SourcePath" = "8:..\\..\\..\\..\\Desktop\\Knabench\\TestWUs\\PG0444_v7.wu"
-            "TargetName" = "8:PG0444_v7.wu"
-            "Tag" = "8:"
-            "Folder" = "8:_4F9EBE15FAF14782BA7007513B140A8A"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -2207,46 +2227,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_AE4F5B725B1A4DB4854139CF3B8B7333"
-            {
-            "SourcePath" = "8:..\\..\\..\\..\\Desktop\\Knabench\\MBbench214.cmd"
-            "TargetName" = "8:MBbench214.cmd"
-            "Tag" = "8:"
-            "Folder" = "8:_EED54D3C1A774D07B38AE579ADCBFEF8"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B350D609364748CBAED6A86EA48B5DC0"
-            {
-            "SourcePath" = "8:..\\..\\..\\..\\Desktop\\Knabench\\TestWUs\\PG0395_v7.wu"
-            "TargetName" = "8:PG0395_v7.wu"
-            "Tag" = "8:"
-            "Folder" = "8:_4F9EBE15FAF14782BA7007513B140A8A"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B51244CDCD1D44A4A1421115FCFA495D"
             {
             "SourcePath" = "8:..\\..\\..\\..\\Desktop\\Knabench\\Tools\\rescmp.txt"
@@ -2373,6 +2353,26 @@
             "TargetName" = "8:boinc_temporary_exit"
             "Tag" = "8:"
             "Folder" = "8:_BC510EF8B4774795858B6097B1EE8B20"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_BB7C75BC3F1E4133BDFF5251682DCD98"
+            {
+            "SourcePath" = "8:..\\..\\..\\..\\Desktop\\Knabench\\MBbench215.cmd"
+            "TargetName" = "8:MBbench215.cmd"
+            "Tag" = "8:"
+            "Folder" = "8:_EED54D3C1A774D07B38AE579ADCBFEF8"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -3375,7 +3375,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:KWSNKnaBench"
         "ProductCode" = "8:{382401C2-28B3-4AEE-A629-7B1FC8BEF489}"
-        "PackageCode" = "8:{7FEED86A-C278-4995-84BC-07ED34A2D89F}"
+        "PackageCode" = "8:{CA04D93B-D1E5-4A2C-A025-0AA015C2D41F}"
         "UpgradeCode" = "8:{FED31FF1-2ADF-41D0-AD60-B5D54319C75E}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

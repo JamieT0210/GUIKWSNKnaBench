@@ -33,7 +33,6 @@ main(int argc, char **argv)
 	int deviceCount = 0;
 	char deviceName[256];
 
-
 	HINSTANCE hGetProcIDDLL = LoadLibrary("nvcuda.dll");
 	if (!hGetProcIDDLL) {
 		printf("No Cuda capable Devices or Cuda Capable Drivers found\n");
