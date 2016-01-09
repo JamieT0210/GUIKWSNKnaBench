@@ -7,6 +7,7 @@ using System.Net.Mail;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace KWSNKnaBench
 {
@@ -19,12 +20,27 @@ namespace KWSNKnaBench
         private string emailUser = null; //E-mail address of user
         private string emailPass = null; //Users e-mail password
         private string boincInstall = null; //Boinc install location
-        private bool boincSuspend = true; //Flag set if the bench app has suspended boinc
+        private string boincData = null; //Boinc data location
 
         public Main()
         {
             InitializeComponent();
         }
+
+        public void InstantiateMyNumericUpDown()
+        {
+            // Create and initialize a NumericUpDown control.
+            numNoCPU = new NumericUpDown();
+            numPercCPU = new NumericUpDown();
+            // Set the Minimum, Maximum, and initial Value.
+            numNoCPU.Value = 0;
+            numNoCPU.Maximum = 100;
+            numNoCPU.Minimum = 0;
+            numPercCPU.Value = 0;
+            numPercCPU.Maximum = 100;
+            numPercCPU.Minimum = 0;
+        }
+
         //Launch Settings form
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -58,6 +74,17 @@ namespace KWSNKnaBench
                 if (File.Exists(benchLoc + @"\Knabench\Resume2.cmd"))
                 {
                     File.Delete(benchLoc + @"\Knabench\Resume2.cmd");
+                }
+                if (File.Exists(boincData + @"global_prefs_override_temp.xml"))
+                {
+                    File.Delete(boincData + @"global_prefs_override.xml");
+                    System.IO.File.Copy(boincData + @"global_prefs_override_temp.xml", boincData + @"global_prefs_override.xml");
+                    System.Diagnostics.Process process = new System.Diagnostics.Process();
+                    process.StartInfo.WorkingDirectory = benchLoc + @"\Knabench";
+                    process.StartInfo.UseShellExecute = false;
+                    process.StartInfo.FileName = benchLoc + @"\Knabench\prefsOverride.cmd";
+                    process.StartInfo.CreateNoWindow = true;
+                    process.Start();
                 }
                 Application.Exit();
             }
@@ -106,6 +133,18 @@ namespace KWSNKnaBench
                     boincInstall = (p.ToString());
                 }
             }
+            //Get the install location of Boinc for some reason Bopinc always writes to the 32bit Software key even on 64bit machines and installs.....
+            RegistryKey key3 = Registry.LocalMachine.OpenSubKey("Software", true);
+            key3 = key3.OpenSubKey("Space Sciences Laboratory, U.C. Berkeley", true);
+            key3 = key3.OpenSubKey("BOINC Setup", true);
+            if (key3 != null)
+            {
+                object q = key2.GetValue("DATADIR");
+                if (q != null)
+                {
+                    boincData = (q.ToString());
+                }
+            }
             if ((string.IsNullOrEmpty(benchLoc)))
             //if nothing has been passed to the var then show error
             {
@@ -147,6 +186,36 @@ namespace KWSNKnaBench
                         MessageBox.Show("Unable to move old benchmark files: {0} " + c.ToString(), "Unable to Move Archive Files", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
+                if (File.Exists(boincData + @"global_prefs_override.xml"))
+                {
+                    decimal numCPUs = numNoCPU.Value;
+                    decimal percCPUs = numPercCPU.Value;
+                    File.Delete(boincData + @"global_prefs_override_temp.xml");
+                    System.IO.File.Copy(boincData + @"global_prefs_override.xml", boincData + @"global_prefs_override_temp.xml");
+                    XmlDocument doc = new XmlDocument();
+                    doc.Load(boincData + @"global_prefs_override.xml");
+                    XmlNode root = doc.DocumentElement;
+                    XmlNode myNode = root.SelectSingleNode("/global_preferences/cpu_usage_limit");
+                    XmlNode myNode2 = root.SelectSingleNode("/global_preferences/max_ncpus_pct");
+                    if (numCPUs > 0)
+                    {
+                        myNode.InnerText = Convert.ToString(percCPUs + ".000000");
+                    }
+                    if (percCPUs > 0)
+                    {
+                        myNode2.InnerText = Convert.ToString(numCPUs + ".000000");
+                    }
+                    doc.Save(boincData + @"global_prefs_override.xml");
+                    File.Delete(benchLoc + @"\Knabench\prefsOverride.cmd");
+                    System.IO.File.WriteAllText(benchLoc + @"\Knabench\prefsOverride.cmd", @"""" + boincInstall + "boinccmd" + @"""" + " --read_global_prefs_override");
+                    System.Diagnostics.Process process = new System.Diagnostics.Process();
+                    process.StartInfo.WorkingDirectory = benchLoc + @"\Knabench";
+                    process.StartInfo.UseShellExecute = false;
+                    process.StartInfo.FileName = benchLoc + @"\Knabench\prefsOverride.cmd";
+                    process.StartInfo.CreateNoWindow = true;
+                    process.Start();
+
+                }
                 //Check for any suspend files left over from last bench and delete if they do
                 if (File.Exists(benchLoc + @"\Knabench\Suspend.cmd"))
                 {
@@ -167,7 +236,6 @@ namespace KWSNKnaBench
                 //Dependant on what the user has selected suspend only CPU tasks.....
                 if (rdoSuspendCPU.Checked)
                 {
-                    boincSuspend = true;
                     System.IO.File.WriteAllText(benchLoc + @"\Knabench\Suspend.cmd", @"""" + boincInstall + "boinccmd" + @"""" + " --set_run_mode never 172800");
                     System.IO.File.WriteAllText(benchLoc + @"\Knabench\Resume.cmd", @"""" + boincInstall + "boinccmd" + @"""" + " --set_run_mode never 1");
                     System.Diagnostics.Process process = new System.Diagnostics.Process();
@@ -180,7 +248,6 @@ namespace KWSNKnaBench
                 //or suspend only GPU tasks.....
                 if (rdoSuspendGPU.Checked)
                 {
-                    boincSuspend = true;
                     System.IO.File.WriteAllText(benchLoc + @"\Knabench\Suspend.cmd", @"""" + boincInstall + "boinccmd" + @"""" + " --set_gpu_mode never 172800");
                     System.IO.File.WriteAllText(benchLoc + @"\Knabench\Resume2.cmd", @"""" + boincInstall + "boinccmd" + @"""" + " --set_gpu_mode never 1");
                     System.Diagnostics.Process process = new System.Diagnostics.Process();
@@ -193,7 +260,6 @@ namespace KWSNKnaBench
                 //or suspend all tasks.....
                 if (rdoSuspendBoinc.Checked)
                 {
-                    boincSuspend = true;
                     System.IO.File.WriteAllText(benchLoc + @"\Knabench\Suspend.cmd", @"""" + boincInstall + "boinccmd" + @"""" + " --set_gpu_mode never 172800");
                     System.IO.File.WriteAllText(benchLoc + @"\Knabench\Suspend2.cmd", @"""" + boincInstall + "boinccmd" + @"""" + " --set_run_mode never 172800");
                     System.IO.File.WriteAllText(benchLoc + @"\Knabench\Resume2.cmd", @"""" + boincInstall + "boinccmd" + @"""" + " --set_gpu_mode never 1");
@@ -225,7 +291,6 @@ namespace KWSNKnaBench
                     process.StartInfo.RedirectStandardError = true;
                     process.ErrorDataReceived += proc_DataReceived;
                     process.OutputDataReceived += proc_DataReceived;
-                    process.Exited += new EventHandler(ProcExited);
                     process.StartInfo.Verb = "runas";
                     process.Start();
                     process.BeginErrorReadLine();
@@ -237,27 +302,6 @@ namespace KWSNKnaBench
                     MessageBox.Show("Unable to run Benchmark: {0} " + b.ToString(), "Error Running Bench", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-        }
-
-        private void ProcExited(object sender, System.EventArgs e)
-        {
-            Process proc = (Process)sender;
-
-            // Wait a short while to allow all console output to be processed and appended
-            // before appending the success/fail message.
-            Thread.Sleep(40);
-
-            if (proc.ExitCode == 0)
-            {
-                this.txtOutput.AppendText("Success." + Environment.NewLine);
-
-            }
-            else
-            {
-                this.txtOutput.AppendText("Failed." + Environment.NewLine);
-            }
-
-            proc.Close();
         }
         //Write the line to the output window line by line
         void proc_DataReceived(object sender, DataReceivedEventArgs e)

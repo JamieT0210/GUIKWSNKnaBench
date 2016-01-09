@@ -49,11 +49,17 @@
             this.rdoSuspendBoinc = new System.Windows.Forms.RadioButton();
             this.rdoSuspendCPU = new System.Windows.Forms.RadioButton();
             this.rdoSuspendGPU = new System.Windows.Forms.RadioButton();
+            this.numNoCPU = new System.Windows.Forms.NumericUpDown();
+            this.lblNumCPUs = new System.Windows.Forms.Label();
+            this.lblPercCPU = new System.Windows.Forms.Label();
+            this.numPercCPU = new System.Windows.Forms.NumericUpDown();
             this.menuStrip1.SuspendLayout();
             this.tabOutput.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSeti)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numNoCPU)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPercCPU)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -224,7 +230,7 @@
             // rdoSuspendBoinc
             // 
             this.rdoSuspendBoinc.AutoSize = true;
-            this.rdoSuspendBoinc.Location = new System.Drawing.Point(94, 201);
+            this.rdoSuspendBoinc.Location = new System.Drawing.Point(93, 171);
             this.rdoSuspendBoinc.Name = "rdoSuspendBoinc";
             this.rdoSuspendBoinc.Size = new System.Drawing.Size(231, 24);
             this.rdoSuspendBoinc.TabIndex = 7;
@@ -235,7 +241,7 @@
             // rdoSuspendCPU
             // 
             this.rdoSuspendCPU.AutoSize = true;
-            this.rdoSuspendCPU.Location = new System.Drawing.Point(331, 201);
+            this.rdoSuspendCPU.Location = new System.Drawing.Point(330, 171);
             this.rdoSuspendCPU.Name = "rdoSuspendCPU";
             this.rdoSuspendCPU.Size = new System.Drawing.Size(235, 24);
             this.rdoSuspendCPU.TabIndex = 8;
@@ -246,7 +252,7 @@
             // rdoSuspendGPU
             // 
             this.rdoSuspendGPU.AutoSize = true;
-            this.rdoSuspendGPU.Location = new System.Drawing.Point(572, 201);
+            this.rdoSuspendGPU.Location = new System.Drawing.Point(571, 171);
             this.rdoSuspendGPU.Name = "rdoSuspendGPU";
             this.rdoSuspendGPU.Size = new System.Drawing.Size(237, 24);
             this.rdoSuspendGPU.TabIndex = 9;
@@ -254,12 +260,50 @@
             this.rdoSuspendGPU.Text = "Suspend GPU BOINC Tasks";
             this.rdoSuspendGPU.UseVisualStyleBackColor = true;
             // 
+            // numNoCPU
+            // 
+            this.numNoCPU.Location = new System.Drawing.Point(210, 215);
+            this.numNoCPU.Name = "numNoCPU";
+            this.numNoCPU.Size = new System.Drawing.Size(79, 26);
+            this.numNoCPU.TabIndex = 10;
+            this.numNoCPU.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // lblNumCPUs
+            // 
+            this.lblNumCPUs.AutoSize = true;
+            this.lblNumCPUs.Location = new System.Drawing.Point(295, 218);
+            this.lblNumCPUs.Name = "lblNumCPUs";
+            this.lblNumCPUs.Size = new System.Drawing.Size(137, 20);
+            this.lblNumCPUs.TabIndex = 11;
+            this.lblNumCPUs.Text = "% of CPUs to Use";
+            // 
+            // lblPercCPU
+            // 
+            this.lblPercCPU.AutoSize = true;
+            this.lblPercCPU.Location = new System.Drawing.Point(523, 218);
+            this.lblPercCPU.Name = "lblPercCPU";
+            this.lblPercCPU.Size = new System.Drawing.Size(167, 20);
+            this.lblPercCPU.TabIndex = 13;
+            this.lblPercCPU.Text = "% of CPU Time to Use";
+            // 
+            // numPercCPU
+            // 
+            this.numPercCPU.Location = new System.Drawing.Point(438, 215);
+            this.numPercCPU.Name = "numPercCPU";
+            this.numPercCPU.Size = new System.Drawing.Size(79, 26);
+            this.numPercCPU.TabIndex = 12;
+            this.numPercCPU.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(903, 723);
+            this.Controls.Add(this.lblPercCPU);
+            this.Controls.Add(this.numPercCPU);
+            this.Controls.Add(this.lblNumCPUs);
+            this.Controls.Add(this.numNoCPU);
             this.Controls.Add(this.rdoSuspendGPU);
             this.Controls.Add(this.rdoSuspendCPU);
             this.Controls.Add(this.rdoSuspendBoinc);
@@ -284,6 +328,8 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSeti)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numNoCPU)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPercCPU)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -311,6 +357,10 @@
         private System.Windows.Forms.RadioButton rdoSuspendBoinc;
         private System.Windows.Forms.RadioButton rdoSuspendCPU;
         private System.Windows.Forms.RadioButton rdoSuspendGPU;
+        private System.Windows.Forms.NumericUpDown numNoCPU;
+        private System.Windows.Forms.Label lblNumCPUs;
+        private System.Windows.Forms.Label lblPercCPU;
+        private System.Windows.Forms.NumericUpDown numPercCPU;
     }
 }
 
