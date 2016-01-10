@@ -76,6 +76,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Locations.cs" />
     <Compile Include="Screens\About.cs">
       <SubType>Form</SubType>
     </Compile>
