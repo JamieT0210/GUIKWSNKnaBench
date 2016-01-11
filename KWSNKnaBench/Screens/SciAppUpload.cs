@@ -1,5 +1,4 @@
-﻿using Microsoft.Win32;
-using System;
+﻿using System;
 using System.IO;
 using System.Windows.Forms;
 
@@ -10,6 +9,7 @@ namespace KWSNKnaBench {
 		private string sciAppsRef = null;
 		private string sciAppsRes = null;
 		private string newSciApps = null;
+        private string installLoc = null;
 
 		public SciAppUpload() {
 			InitializeComponent();
@@ -30,13 +30,8 @@ namespace KWSNKnaBench {
 				//Move the .exe files to the reference folder
 				//If the user wants to use the old sci apps as reference apps
 				if (chkBoxRef.Checked) try {
-					RegistryKey key = Registry.CurrentUser.OpenSubKey("Software", true);
-					key = key.OpenSubKey("Jamie", true);
-					key = key.OpenSubKey("KWSNKnaBench", true);
-					Object o = key.GetValue("Path");
-					string InstallLoc = (o.ToString());
-					InstallLoc = InstallLoc.TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar);
-					sciAppsLoc = InstallLoc + @"\Knabench\Science_apps";
+                    installLoc = KWSNKnaBench.Classes.Locations.location("Path");
+                    sciAppsLoc = installLoc + @"\Knabench\Science_apps";
 					sciAppsRef = (sciAppsLoc + @"\Reference");
 					string fileExtension = "*.exe";
 
@@ -65,13 +60,7 @@ namespace KWSNKnaBench {
 				} else
 				//Move the *.exe files to the reserve folder
 				try {
-					RegistryKey key = Registry.CurrentUser.OpenSubKey("Software", true);
-					key = key.OpenSubKey("Jamie", true);
-					key = key.OpenSubKey("KWSNKnaBench", true);
-					Object o = key.GetValue("Path");
-					string InstallLoc = (o.ToString());
-					InstallLoc = InstallLoc.TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar);
-					sciAppsLoc = InstallLoc + @"\Knabench\Science_apps";
+                    sciAppsLoc = installLoc + @"\Knabench\Science_apps";
 					sciAppsRes = (sciAppsLoc + @"\Reserve");
 					string fileExtension2 = "*.exe";
 
@@ -103,13 +92,7 @@ namespace KWSNKnaBench {
 				if (string.IsNullOrEmpty(txtNewSciApps.Text)) {
 					MessageBox.Show("No location specified - Please select where the new science apps are", "Move Failed", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 				} else try {
-					RegistryKey key = Registry.CurrentUser.OpenSubKey("Software", true);
-					key = key.OpenSubKey("Jamie", true);
-					key = key.OpenSubKey("KWSNKnaBench", true);
-					Object o = key.GetValue("Path");
-					string InstallLoc = (o.ToString());
-					InstallLoc = InstallLoc.TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar);
-					sciAppsLoc = InstallLoc + @"\Knabench\Science_apps";
+                    sciAppsLoc = installLoc + @"\Knabench\Science_apps";
 					//Move all .exe and .dll files from the new location to the sci apps folder in the KnaBench folder
 					newSciApps = txtNewSciApps.Text;
 					string fileExtension = "*.exe";

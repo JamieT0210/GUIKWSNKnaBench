@@ -1,6 +1,5 @@
 ﻿using Microsoft.Win32;
 using System;
-using System.IO;
 using System.Windows.Forms;
 
 namespace KWSNKnaBench
@@ -92,52 +91,17 @@ namespace KWSNKnaBench
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            RegistryKey key = Registry.CurrentUser.OpenSubKey("Software", true);
-            key = key.OpenSubKey("Jamie", true);
-            key = key.OpenSubKey("KWSNKnaBench", true);
-            if (key != null)
+            txtBenchLoc.Text = KWSNKnaBench.Classes.Locations.location("Path");
+            txtSMTPServer.Text = KWSNKnaBench.Classes.Locations.location("SMTPServer");
+            txtSMTPPort.Text = KWSNKnaBench.Classes.Locations.location("SMTPPort");
+            txtEmailUser.Text = KWSNKnaBench.Classes.Locations.location("SMTPAddress");
+            if (string.IsNullOrEmpty(KWSNKnaBench.Classes.Locations.location("SMTPAddress")))
             {
-                Object o = key.GetValue("Path");
-                if (o != null)
-                {
-                    string InstallLoc = (o.ToString());
-                    InstallLoc = InstallLoc.TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar);
-                    txtBenchLoc.Text = InstallLoc;
-
-                }
-                Object p = key.GetValue("SMTPServer");
-                if (p != null)
-                {
-                    string SMTPServer = (p.ToString());
-                    txtSMTPServer.Text = SMTPServer;
-
-                }
-                Object q = key.GetValue("SMTPPort");
-                if (q != null)
-                {
-                    string SMTPPort = (q.ToString());
-                    txtSMTPPort.Text = SMTPPort;
-
-                }
-                Object r = key.GetValue("SMTPAddress");
-                if (r != null)
-                {
-                    string SMTPAddress = (r.ToString());
-                    txtEmailUser.Text = SMTPAddress;
-
-                }
-                Object s = key.GetValue("SMTPPassword");
-                if (s != null)
-                {
-                    string SMTPPassword = (s.ToString());
-                    if (string.IsNullOrEmpty(SMTPPassword))
-                    {
-                        txtEmailPass.Text = "";
-                    }
-                    else {
-                        txtEmailPass.Text = Crypto.Decrypt(SMTPPassword, "A7A338B93D5E3EE1C58789EE68FAB");
-                    }
-                }
+                txtEmailPass.Text = "";
+            }
+            else
+            {
+                txtEmailPass.Text = Crypto.Decrypt(KWSNKnaBench.Classes.Locations.location("SMTPPassword"), "A7A338B93D5E3EE1C58789EE68FAB");
             }
         }
     }

@@ -18,7 +18,8 @@ namespace KWSNKnaBench {
   private string emailPass = null; //Users e-mail password
   private string boincInstall = null; //Boinc install location
   private string boincData = null; //Boinc data location
-  private string InstallLoc = null;
+  private string InstallLoc = null; 
+  private bool rVal; //Return value of the createFiles process true == created correctly, false == failed to be created
 
   public Main() {
    InitializeComponent();
@@ -146,69 +147,87 @@ namespace KWSNKnaBench {
        myNode2.InnerText = Convert.ToString(numCPUs + ".000000");
       }
       doc.Save(boincData + @"global_prefs_override.xml");
-      File.Delete(benchLoc + @"\Knabench\prefsOverride.cmd");
-      System.IO.File.WriteAllText(benchLoc + @"\Knabench\prefsOverride.cmd", @"""" + boincInstall + "boinccmd" + @"""" + " --read_global_prefs_override");
-      System.Diagnostics.Process process = new System.Diagnostics.Process();
-      process.StartInfo.WorkingDirectory = benchLoc + @"\Knabench";
-      process.StartInfo.UseShellExecute = false;
-      process.StartInfo.FileName = benchLoc + @"\Knabench\prefsOverride.cmd";
-      process.StartInfo.CreateNoWindow = true;
-      process.Start();
+      rVal = KWSNKnaBench.Classes.createFiles.createCMDFiles("prefsOverride");
+      if (rVal == true)
+      {
+          System.Diagnostics.Process process = new System.Diagnostics.Process();
+          process.StartInfo.WorkingDirectory = benchLoc + @"\Knabench";
+          process.StartInfo.UseShellExecute = false;
+          process.StartInfo.FileName = benchLoc + @"\Knabench\prefsOverride.cmd";
+          process.StartInfo.CreateNoWindow = true;
+          process.Start();
+      }
+      else
+      {
+          MessageBox.Show("Unable to Override Global Prefs: " + Convert.ToString(e), "Override Prefs", MessageBoxButtons.OK, MessageBoxIcon.Error);
+      }
 
      }
      //Check for any suspend files left over from last bench and delete if they do
-     if (File.Exists(benchLoc + @"\Knabench\Suspend.cmd")) {
       File.Delete(benchLoc + @"\Knabench\Suspend.cmd");
-     }
-     if (File.Exists(benchLoc + @"\Knabench\Suspend2.cmd")) {
       File.Delete(benchLoc + @"\Knabench\Suspend2.cmd");
-     }
-     if (File.Exists(benchLoc + @"\Knabench\Resume.cmd")) {
       File.Delete(benchLoc + @"\Knabench\Resume.cmd");
-     }
-     if (File.Exists(benchLoc + @"\Knabench\Resume2.cmd")) {
       File.Delete(benchLoc + @"\Knabench\Resume2.cmd");
-     }
+
      //Dependant on what the user has selected suspend only CPU tasks.....
      if (rdoSuspendCPU.Checked) {
-      System.IO.File.WriteAllText(benchLoc + @"\Knabench\Suspend.cmd", @"""" + boincInstall + "boinccmd" + @"""" + " --set_run_mode never 172800");
-      System.IO.File.WriteAllText(benchLoc + @"\Knabench\Resume.cmd", @"""" + boincInstall + "boinccmd" + @"""" + " --set_run_mode never 1");
-      System.Diagnostics.Process process = new System.Diagnostics.Process();
-      process.StartInfo.WorkingDirectory = benchLoc + @"\Knabench";
-      process.StartInfo.UseShellExecute = false;
-      process.StartInfo.FileName = benchLoc + @"\Knabench\Suspend.cmd";
-      process.StartInfo.CreateNoWindow = true;
-      process.Start();
+         rVal = KWSNKnaBench.Classes.createFiles.createCMDFiles("SuspendCPU");
+
+         if (rVal == true)
+         {
+             System.Diagnostics.Process process = new System.Diagnostics.Process();
+             process.StartInfo.WorkingDirectory = benchLoc + @"\Knabench";
+             process.StartInfo.UseShellExecute = false;
+             process.StartInfo.FileName = benchLoc + @"\Knabench\Suspend.cmd";
+             process.StartInfo.CreateNoWindow = true;
+             process.Start();
+         }
+         else
+         {
+             MessageBox.Show("Unable to Suspend CPU Tasks: " + Convert.ToString(e), "Suspend Tasks", MessageBoxButtons.OK, MessageBoxIcon.Error);
+         }
      }
      //or suspend only GPU tasks.....
      if (rdoSuspendGPU.Checked) {
-      System.IO.File.WriteAllText(benchLoc + @"\Knabench\Suspend.cmd", @"""" + boincInstall + "boinccmd" + @"""" + " --set_gpu_mode never 172800");
-      System.IO.File.WriteAllText(benchLoc + @"\Knabench\Resume2.cmd", @"""" + boincInstall + "boinccmd" + @"""" + " --set_gpu_mode never 1");
-      System.Diagnostics.Process process = new System.Diagnostics.Process();
-      process.StartInfo.WorkingDirectory = benchLoc + @"\Knabench";
-      process.StartInfo.UseShellExecute = false;
-      process.StartInfo.FileName = benchLoc + @"\Knabench\Suspend.cmd";
-      process.StartInfo.CreateNoWindow = true;
-      process.Start();
+         rVal = KWSNKnaBench.Classes.createFiles.createCMDFiles("SuspendGPU");
+
+         if (rVal == true)
+         {
+             System.Diagnostics.Process process = new System.Diagnostics.Process();
+             process.StartInfo.WorkingDirectory = benchLoc + @"\Knabench";
+             process.StartInfo.UseShellExecute = false;
+             process.StartInfo.FileName = benchLoc + @"\Knabench\Suspend.cmd";
+             process.StartInfo.CreateNoWindow = true;
+             process.Start();
+         }
+         else
+         {
+             MessageBox.Show("Unable to Suspend GPU Tasks: " + Convert.ToString(e), "Suspend Tasks", MessageBoxButtons.OK, MessageBoxIcon.Error);
+         }
      }
      //or suspend all tasks.....
      if (rdoSuspendBoinc.Checked) {
-      System.IO.File.WriteAllText(benchLoc + @"\Knabench\Suspend.cmd", @"""" + boincInstall + "boinccmd" + @"""" + " --set_gpu_mode never 172800");
-      System.IO.File.WriteAllText(benchLoc + @"\Knabench\Suspend2.cmd", @"""" + boincInstall + "boinccmd" + @"""" + " --set_run_mode never 172800");
-      System.IO.File.WriteAllText(benchLoc + @"\Knabench\Resume2.cmd", @"""" + boincInstall + "boinccmd" + @"""" + " --set_gpu_mode never 1");
-      System.IO.File.WriteAllText(benchLoc + @"\Knabench\Resume.cmd", @"""" + boincInstall + "boinccmd" + @"""" + " --set_run_mode never 1");
-      System.Diagnostics.Process process = new System.Diagnostics.Process();
-      process.StartInfo.WorkingDirectory = benchLoc + @"\Knabench";
-      process.StartInfo.UseShellExecute = false;
-      process.StartInfo.FileName = benchLoc + @"\Knabench\Suspend.cmd";
-      process.StartInfo.CreateNoWindow = true;
-      process.Start();
-      System.Diagnostics.Process process2 = new System.Diagnostics.Process();
-      process2.StartInfo.WorkingDirectory = benchLoc + @"\Knabench";
-      process2.StartInfo.UseShellExecute = false;
-      process2.StartInfo.FileName = benchLoc + @"\Knabench\Suspend2.cmd";
-      process2.StartInfo.CreateNoWindow = true;
-      process2.Start();
+         rVal = KWSNKnaBench.Classes.createFiles.createCMDFiles("SuspendAll");
+
+         if (rVal == true)
+         {
+             System.Diagnostics.Process process = new System.Diagnostics.Process();
+             process.StartInfo.WorkingDirectory = benchLoc + @"\Knabench";
+             process.StartInfo.UseShellExecute = false;
+             process.StartInfo.FileName = benchLoc + @"\Knabench\Suspend.cmd";
+             process.StartInfo.CreateNoWindow = true;
+             process.Start();
+             System.Diagnostics.Process process2 = new System.Diagnostics.Process();
+             process2.StartInfo.WorkingDirectory = benchLoc + @"\Knabench";
+             process2.StartInfo.UseShellExecute = false;
+             process2.StartInfo.FileName = benchLoc + @"\Knabench\Suspend2.cmd";
+             process2.StartInfo.CreateNoWindow = true;
+             process2.Start();
+         }
+         else
+         {
+             MessageBox.Show("Unable to Suspend All Tasks: " + Convert.ToString(e), "Suspend Tasks", MessageBoxButtons.OK, MessageBoxIcon.Error);
+         }
      }
 
      try {
