@@ -38,7 +38,7 @@ main(int argc, char **argv)
 		printf("No Cuda capable Devices or Cuda Capable Drivers found\n");
 		return EXIT_FAILURE;
 	}
-	else printf("nvcuda.dll loaded OK!\n");
+	//	else printf("nvcuda.dll loaded OK!\n");
 	FreeLibrary(hGetProcIDDLL);
 
 	//    printf("%s Starting...\n\n", argv[0]);
@@ -47,15 +47,15 @@ main(int argc, char **argv)
 	printf("CUDA Device Query (Driver API) statically linked version \n");
 
 
-		CUresult error_id = cuInit(0);
+	CUresult error_id = cuInit(0);
 
 
-			if (error_id != CUDA_SUCCESS)
-			{
-				printf("cuInit(0) returned %d\n-> %s\n", error_id, getCudaDrvErrorString(error_id));
-				printf("Result = FAIL\n");
-				exit(EXIT_FAILURE);
-			}
+	if (error_id != CUDA_SUCCESS)
+	{
+		printf("cuInit(0) returned %d\n-> %s\n", error_id, getCudaDrvErrorString(error_id));
+		printf("Result = FAIL\n");
+		exit(EXIT_FAILURE);
+	}
 
 
 	error_id = cuDeviceGetCount(&deviceCount);
@@ -145,29 +145,6 @@ main(int argc, char **argv)
 			printf("  L2 Cache Size:                                 %d bytes\n", L2CacheSize);
 		}
 
-		//int maxTex1D, maxTex2D[2], maxTex3D[3];
-		//getCudaAttribute<int>(&maxTex1D, CU_DEVICE_ATTRIBUTE_MAXIMUM_TEXTURE1D_WIDTH, dev);
-		//getCudaAttribute<int>(&maxTex2D[0], CU_DEVICE_ATTRIBUTE_MAXIMUM_TEXTURE2D_WIDTH, dev);
-		//getCudaAttribute<int>(&maxTex2D[1], CU_DEVICE_ATTRIBUTE_MAXIMUM_TEXTURE2D_HEIGHT, dev);
-		//getCudaAttribute<int>(&maxTex3D[0], CU_DEVICE_ATTRIBUTE_MAXIMUM_TEXTURE3D_WIDTH, dev);
-		//getCudaAttribute<int>(&maxTex3D[1], CU_DEVICE_ATTRIBUTE_MAXIMUM_TEXTURE3D_HEIGHT, dev);
-		//getCudaAttribute<int>(&maxTex3D[2], CU_DEVICE_ATTRIBUTE_MAXIMUM_TEXTURE3D_DEPTH, dev);
-		//printf("  Max Texture Dimension Sizes                    1D=(%d) 2D=(%d, %d) 3D=(%d, %d, %d)\n",
-		//	maxTex1D, maxTex2D[0], maxTex2D[1], maxTex3D[0], maxTex3D[1], maxTex3D[2]);
-
-		//int  maxTex1DLayered[2];
-		//getCudaAttribute<int>(&maxTex1DLayered[0], CU_DEVICE_ATTRIBUTE_MAXIMUM_TEXTURE1D_LAYERED_WIDTH, dev);
-		//getCudaAttribute<int>(&maxTex1DLayered[1], CU_DEVICE_ATTRIBUTE_MAXIMUM_TEXTURE1D_LAYERED_LAYERS, dev);
-		//printf("  Maximum Layered 1D Texture Size, (num) layers  1D=(%d), %d layers\n",
-		//	maxTex1DLayered[0], maxTex1DLayered[1]);
-
-		//int  maxTex2DLayered[3];
-		//getCudaAttribute<int>(&maxTex2DLayered[0], CU_DEVICE_ATTRIBUTE_MAXIMUM_TEXTURE2D_LAYERED_WIDTH, dev);
-		//getCudaAttribute<int>(&maxTex2DLayered[1], CU_DEVICE_ATTRIBUTE_MAXIMUM_TEXTURE2D_LAYERED_HEIGHT, dev);
-		//getCudaAttribute<int>(&maxTex2DLayered[2], CU_DEVICE_ATTRIBUTE_MAXIMUM_TEXTURE2D_LAYERED_LAYERS, dev);
-		//printf("  Maximum Layered 2D Texture Size, (num) layers  2D=(%d, %d), %d layers\n",
-		//	maxTex2DLayered[0], maxTex2DLayered[1], maxTex2DLayered[2]);
-
 		int totalConstantMemory;
 		getCudaAttribute<int>(&totalConstantMemory, CU_DEVICE_ATTRIBUTE_TOTAL_CONSTANT_MEMORY, dev);
 		printf("  Total amount of constant memory:               %u bytes\n", totalConstantMemory);
@@ -186,25 +163,6 @@ main(int argc, char **argv)
 		int maxThreadsPerBlock;
 		getCudaAttribute<int>(&maxThreadsPerBlock, CU_DEVICE_ATTRIBUTE_MAX_THREADS_PER_BLOCK, dev);
 		printf("  Maximum number of threads per block:           %d\n", maxThreadsPerBlock);
-
-		//int blockDim[3];
-		//getCudaAttribute<int>(&blockDim[0], CU_DEVICE_ATTRIBUTE_MAX_BLOCK_DIM_X, dev);
-		//getCudaAttribute<int>(&blockDim[1], CU_DEVICE_ATTRIBUTE_MAX_BLOCK_DIM_Y, dev);
-		//getCudaAttribute<int>(&blockDim[2], CU_DEVICE_ATTRIBUTE_MAX_BLOCK_DIM_Z, dev);
-		//printf("  Max dimension size of a thread block (x,y,z): (%d, %d, %d)\n", blockDim[0], blockDim[1], blockDim[2]);
-		//int gridDim[3];
-		//getCudaAttribute<int>(&gridDim[0], CU_DEVICE_ATTRIBUTE_MAX_GRID_DIM_X, dev);
-		//getCudaAttribute<int>(&gridDim[1], CU_DEVICE_ATTRIBUTE_MAX_GRID_DIM_Y, dev);
-		//getCudaAttribute<int>(&gridDim[2], CU_DEVICE_ATTRIBUTE_MAX_GRID_DIM_Z, dev);
-		//printf("  Max dimension size of a grid size (x,y,z):    (%d, %d, %d)\n", gridDim[0], gridDim[1], gridDim[2]);
-
-		//int textureAlign;
-		//getCudaAttribute<int>(&textureAlign, CU_DEVICE_ATTRIBUTE_TEXTURE_ALIGNMENT, dev);
-		//printf("  Texture alignment:                             %u bytes\n", textureAlign);
-
-		//int memPitch;
-		//getCudaAttribute<int>(&memPitch, CU_DEVICE_ATTRIBUTE_MAX_PITCH, dev);
-		//printf("  Maximum memory pitch:                          %u bytes\n", memPitch);
 
 		int gpuOverlap;
 		getCudaAttribute<int>(&gpuOverlap, CU_DEVICE_ATTRIBUTE_GPU_OVERLAP, dev);
@@ -230,10 +188,6 @@ main(int argc, char **argv)
 		int surfaceAlignment;
 		getCudaAttribute<int>(&surfaceAlignment, CU_DEVICE_ATTRIBUTE_SURFACE_ALIGNMENT, dev);
 		printf("  Alignment requirement for Surfaces:            %s\n", surfaceAlignment ? "Yes" : "No");
-
-		//int eccEnabled;
-		//getCudaAttribute<int>(&eccEnabled, CU_DEVICE_ATTRIBUTE_ECC_ENABLED, dev);
-		//printf("  Device has ECC support:                        %s\n", eccEnabled ? "Enabled" : "Disabled");
 
 #if defined(WIN32) || defined(_WIN32) || defined(WIN64) || defined(_WIN64)
 		int tccDriver;

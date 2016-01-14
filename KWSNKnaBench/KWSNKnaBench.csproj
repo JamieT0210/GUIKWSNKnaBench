@@ -51,17 +51,18 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationIcon>logo7.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Win32Resource>
+    </Win32Resource>
+  </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationIcon>
-    </ApplicationIcon>
-  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="OpenHardwareMonitorLib">
-      <HintPath>..\..\OpenHardwareMonitor\Bin\Release\OpenHardwareMonitorLib.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
@@ -78,6 +79,11 @@
   <ItemGroup>
     <Compile Include="Classes\createFiles.cs" />
     <Compile Include="Classes\Locations.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Screens\About.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,14 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Screens\SciAppUpload.resx">
       <DependentUpon>SciAppUpload.cs</DependentUpon>
     </EmbeddedResource>
@@ -157,15 +158,8 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="logo7.ico" />
     <Content Include="Resources\logo7.ico" />
-    <None Include="Resources\nvidia icon.jpg" />
-    <None Include="Resources\fan.jpg" />
-    <None Include="Resources\performance-clock-speed-512.png" />
-    <None Include="Resources\clock.jpg" />
-    <None Include="Resources\guage.png" />
-    <None Include="Resources\speedo.png" />
-    <None Include="Resources\thermometer.png" />
-    <None Include="Resources\AMD_Radeon_graphics_logo_2014.svg_2.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

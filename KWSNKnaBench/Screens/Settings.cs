@@ -41,7 +41,8 @@ namespace KWSNKnaBench
             {
                 txtEmailPass.UseSystemPasswordChar = false;
             }
-            else {
+            else
+            {
                 txtEmailPass.UseSystemPasswordChar = true;
             }
         }
@@ -61,7 +62,8 @@ namespace KWSNKnaBench
                 {
                     key.SetValue("SMTPPassword", "");
                 }
-                else {
+                else
+                {
                     key.SetValue("SMTPPassword", Crypto.Encrypt(txtEmailPass.Text, "A7A338B93D5E3EE1C58789EE68FAB"));
                 }
             }
